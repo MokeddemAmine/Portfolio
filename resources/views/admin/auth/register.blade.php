@@ -55,7 +55,7 @@
                                                     <a href="auth-login.html" class="btn btn-primary text-uppercase">Sign up</a>
                                                 </div>
                                                 <div class="col-12  mt-3">
-                                                    <p>Already have an account ?<a href="auth-login.html"> Sign In</a></p>
+                                                    <p>Already have an account ?<a href="{{route('admin.dashboard.login')}}"> Sign In</a></p>
                                                 </div>
                                             </div>
                                         </form>
@@ -65,7 +65,7 @@
                             <div class="col-sm-6 col-xxl-9 col-lg-7 bg-gradient o-hidden order-1 order-sm-2">
                                 <div class="row align-items-center h-100">
                                     <div class="col-7 mx-auto ">
-                                        <img class="img-fluid" src="assets/img/bg/login.svg" alt="">
+                                        <img class="img-fluid" src="{{asset('admin/assets/img/bg/login.svg')}}" alt="">
                                     </div>
                                 </div>
                             </div>

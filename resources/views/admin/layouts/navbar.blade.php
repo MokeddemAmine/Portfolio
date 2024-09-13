@@ -34,31 +34,31 @@
                                     <h4>Pages</h4>
                                     <ul>
                                         <li class="nav-link">
-                                            <a href="page-account-settings.html">Account Settings</a>
+                                            <a href="{{route('admin.dashboard.account_settings')}}">Account Settings</a>
                                         </li>
                                         <li class="nav-link">
-                                            <a href="page-clients.html">Clients</a>
+                                            <a href="{{route('admin.dashboard.clients')}}">Clients</a>
                                         </li>
                                         <li class="nav-link">
-                                            <a href="page-contacts.html">Contacts</a>
+                                            <a href="{{route('admin.dashboard.contacts')}}">Contacts</a>
                                         </li>
                                         <li class="nav-link">
-                                            <a href="page-gallery.html">Gallery</a>
+                                            <a href="{{route('admin.dashboard.gallery')}}">Gallery</a>
                                         </li>
                                         <li class="nav-link">
-                                            <a href="page-pricing.html">Pricing</a>
+                                            <a href="{{route('admin.dashboard.pricing')}}">Pricing</a>
                                         </li>
                                         <li class="nav-link">
-                                            <a href="page-task-list.html">Task List</a>
+                                            <a href="{{route('admin.dashboard.task_list')}}">Task List</a>
                                         </li>
                                         <li class="nav-link">
-                                            <a href="page-404.html">404</a>
+                                            <a href="{{route('admin.dashboard.page_404')}}">404</a>
                                         </li>
                                         <li class="nav-link">
-                                            <a href="page-500.html">500</a>
+                                            <a href="{{route('admin.dashboard.page_500')}}">500</a>
                                         </li>
                                         <li class="nav-link">
-                                            <a href="page-coming-soon.html">Coming Soon</a>
+                                            <a href="{{route('admin.dashboard.coming_soon')}}">Coming Soon</a>
                                         </li>
                                     </ul>
                                 </div>
@@ -94,16 +94,7 @@
                             </div>
                         </div>
                     </li>
-                    <li class="nav-item dropdown">
-                        <a href="javascript:void(0)" class="nav-link " id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Drop Down
-                            <i class="fa fa-angle-down"></i>
-                        </a>
-                        <div class="dropdown-menu animated fadeIn" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item nav-link" href="javascript:void(0)">Action</a>
-                            <a class="dropdown-item nav-link" href="javascript:void(0)">Another action</a>
-                            <a class="dropdown-item nav-link" href="javascript:void(0)">Something else here</a>
-                        </div>
-                    </li>
+                    
                     <li class="nav-item full-screen d-none d-lg-block" id="btnFullscreen">
                         <a href="javascript:void(0)" class="nav-link expand">
                             <i class="icon-size-fullscreen"></i>
@@ -345,20 +336,18 @@
                                 </div>
                             </div>
                             <div class="p-4">
-                                <a class="dropdown-item d-flex nav-link" href="javascript:void(0)">
+                                <a class="dropdown-item d-flex nav-link" href="">
                                     <i class="fa fa-user pr-2 text-success"></i> Profile</a>
-                                <a class="dropdown-item d-flex nav-link" href="javascript:void(0)">
+                                <a class="dropdown-item d-flex nav-link" href="{{route('admin.dashboard.mail_inbox')}}">
                                     <i class="fa fa-envelope pr-2 text-primary"></i> Inbox
                                     <span class="badge badge-primary ml-auto">6</span>
                                 </a>
-                                <a class="dropdown-item d-flex nav-link" href="javascript:void(0)">
+                                <a class="dropdown-item d-flex nav-link" href="{{route('admin.dashboard.account_settings')}}">
                                     <i class=" ti ti-settings pr-2 text-info"></i> Settings
                                 </a>
-                                <a class="dropdown-item d-flex nav-link" href="javascript:void(0)">
-                                    <i class="fa fa-compass pr-2 text-warning"></i> Need help?</a>
                                 <div class="row mt-2">
                                     <div class="col">
-                                        <a class="bg-light p-3 text-center d-block" href="#">
+                                        <a class="bg-light p-3 text-center d-block" href="{{route('admin.dashboard.app_chat')}}">
                                             <i class="fe fe-mail font-20 text-primary"></i>
                                             <span class="d-block font-13 mt-2">My messages</span>
                                         </a>
