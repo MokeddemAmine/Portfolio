@@ -132,9 +132,9 @@
                                             </g>
                                         </g>
                                     </svg>
-                                    <h3 class="m-t-30">What on earth are you doing here!</h3>
-                                    <p>Well this is awkward, the page you were trying to view does not exist.</p>
-                                    <a href="index.html" class="btn btn-round btn-primary mt-3">Back to Home</a>
+                                    <h3 class="m-t-30">{{_('What on earth are you doing here!')}}</h3>
+                                    <p>{{_('Well this is awkward, the page you were trying to view does not exist.')}}</p>
+                                    <a href="{{route('admin.dashboard.index')}}" class="btn btn-round btn-primary mt-3">{{_('Back to Home')}}</a>
                                 </div>
                             </div>
                         </div>

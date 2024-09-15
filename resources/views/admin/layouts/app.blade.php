@@ -43,7 +43,7 @@
             <footer class="footer">
                 <div class="row">
                     <div class="col-12 col-sm-6 text-center text-sm-left">
-                        <p>&copy; Copyright 2019. All rights reserved.</p>
+                        <p>&copy; Copyright <?php echo date('Y'); ?>. All rights reserved.</p>
                     </div>
                 
                 </div>

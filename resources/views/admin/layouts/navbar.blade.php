@@ -18,38 +18,41 @@
         <!-- begin navigation -->
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <div class="navigation d-flex">
+                
                 <ul class="navbar-nav nav-left">
                     <li class="nav-item">
                         <a href="javascript:void(0)" class="nav-link sidebar-toggle">
                             <i class="ti ti-align-right"></i>
                         </a>
                     </li>
+                    @auth('admin')
+                    @if (Auth::guard('admin')->user()->email_verified_at)
                     <li class="nav-item">
-                        <a class="nav-link  " href="javascript:void(0)" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Mega Menu
+                        <a class="nav-link  " href="javascript:void(0)" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{_('Mega Menu')}}
                             <i class="fa fa-angle-down"></i>
                         </a>
                         <div class="dropdown-menu mega-menu animated fadeIn" aria-labelledby="navbarDropdown">
                             <div class="row no-gutters">
                                 <div class="col-sm-2 p-20">
-                                    <h4>Pages</h4>
+                                    <h4>{{_('Pages')}}</h4>
                                     <ul>
                                         <li class="nav-link">
-                                            <a href="{{route('admin.dashboard.account_settings')}}">Account Settings</a>
+                                            <a href="{{route('admin.dashboard.account_settings')}}">{{_('Account Settings')}}</a>
                                         </li>
                                         <li class="nav-link">
-                                            <a href="{{route('admin.dashboard.clients')}}">Clients</a>
+                                            <a href="{{route('admin.dashboard.clients')}}">{{_('Clients')}}</a>
                                         </li>
                                         <li class="nav-link">
-                                            <a href="{{route('admin.dashboard.contacts')}}">Contacts</a>
+                                            <a href="{{route('admin.dashboard.contacts')}}">{{_('Contacts')}}</a>
                                         </li>
                                         <li class="nav-link">
-                                            <a href="{{route('admin.dashboard.gallery')}}">Gallery</a>
+                                            <a href="{{route('admin.dashboard.gallery')}}">{{_('Gallery')}}</a>
                                         </li>
                                         <li class="nav-link">
-                                            <a href="{{route('admin.dashboard.pricing')}}">Pricing</a>
+                                            <a href="{{route('admin.dashboard.pricing')}}">{{_('Pricing')}}</a>
                                         </li>
                                         <li class="nav-link">
-                                            <a href="{{route('admin.dashboard.task_list')}}">Task List</a>
+                                            <a href="{{route('admin.dashboard.task_list')}}">{{_('Task List')}}</a>
                                         </li>
                                         <li class="nav-link">
                                             <a href="{{route('admin.dashboard.page_404')}}">404</a>
@@ -58,32 +61,32 @@
                                             <a href="{{route('admin.dashboard.page_500')}}">500</a>
                                         </li>
                                         <li class="nav-link">
-                                            <a href="{{route('admin.dashboard.coming_soon')}}">Coming Soon</a>
+                                            <a href="{{route('admin.dashboard.coming_soon')}}">{{_('Coming Soon')}}</a>
                                         </li>
                                     </ul>
                                 </div>
                                 <div class="col-sm-4 p-20">
-                                    <h4>Contact Us</h4>
+                                    <h4>{{_('Contact Us')}}</h4>
                                     <div>
                                         <form>
                                             <div class="form-group">
-                                                <input type="text" class="form-control" id="Password1" placeholder="Enter Name">
+                                                <input type="text" class="form-control" id="Password1" placeholder="{{_('Enter Name')}}">
                                             </div>
                                             <div class="form-group">
-                                                <input type="email" class="form-control" id="Email1" placeholder="Enter Email">
+                                                <input type="email" class="form-control" id="Email1" placeholder="{{_('Enter Email')}}">
                                             </div>
                                             <div class="form-group">
                                                 <textarea class="form-control" placeholder="Message" id="Textarea1" rows="3"></textarea>
                                             </div>
-                                            <button type="submit" class="btn btn-primary text-uppercase">Submit</button>
+                                            <button type="submit" class="btn btn-primary text-uppercase">{{_("Submit")}}</button>
                                         </form>
                                     </div>
                                 </div>
                                 <div class="col-sm-4">
                                     <div class="chart-wrap">
                                         <div class="p-20">
-                                            <h4 class="mb-1">Page Views</h4>
-                                            <p>Daily page visitors</p>
+                                            <h4 class="mb-1">{{_('Page Views')}}</h4>
+                                            <p>{{_('Daily page visitors')}}</p>
                                             <h2 class="text-primary font-xxl mt-2">80+</h2>
                                         </div>
                                         <div class="apexchart-wrapper">
@@ -94,24 +97,36 @@
                             </div>
                         </div>
                     </li>
-                    
+                    @endif
                     <li class="nav-item full-screen d-none d-lg-block" id="btnFullscreen">
                         <a href="javascript:void(0)" class="nav-link expand">
                             <i class="icon-size-fullscreen"></i>
                         </a>
                     </li>
+                    @endauth
                 </ul>
+                
                 <ul class="navbar-nav nav-right ml-auto">
+                    @guest('admin')
+                        <li class="nav-item">
+                            
+                            <a href="{{route('admin.dashboard.login')}}" class="nav-link text-capitalize d-flex">
+                                <i class="ti ti-user mr-2"></i>
+                                {{_('login')}}
+                            </a>
+                        </li>
+                    @else 
+                    @if (Auth::guard('admin')->user()->email_verified_at)
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="javascript:void(0)" id="navbarDropdown2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <i class="ti ti-email"></i>
                         </a>
                         <div class="dropdown-menu extended animated fadeIn" aria-labelledby="navbarDropdown">
                             <ul>
-                                <li class="dropdown-header bg-gradient p-4 text-white text-left">Messages
+                                <li class="dropdown-header bg-gradient p-4 text-white text-left">{{_('Messages')}}
                                     <label class="label label-info label-round">6</label>
                                     <a href="#" class="float-right btn btn-square btn-inverse-light btn-xs m-0">
-                                        <span class="font-13"> Mark all as read</span></a>
+                                        <span class="font-13"> {{_('Mark all as read')}}</span></a>
                                 </li>
                                 <li class="dropdown-body">
                                     <ul class="scrollbar scroll_dark max-h-240">
@@ -123,7 +138,7 @@
                                                     </div>
                                                     <div class="notify-message">
                                                         <p class="font-weight-bold">Brianing Leyon</p>
-                                                        <small>You will sail along until you...</small>
+                                                        <small>{{_('You will sail along until you...')}}</small>
                                                     </div>
                                                 </div>
                                             </a>
@@ -196,7 +211,7 @@
                                     </ul>
                                 </li>
                                 <li class="dropdown-footer">
-                                    <a class="font-13" href="javascript:void(0)"> View All messages </a>
+                                    <a class="font-13" href="{{route('admin.dashboard.app_chat')}}">{{_(' View All messages')}} </a>
                                 </li>
                             </ul>
                         </div>
@@ -211,9 +226,9 @@
                         </a>
                         <div class="dropdown-menu extended animated fadeIn" aria-labelledby="navbarDropdown">
                             <ul>
-                                <li class="dropdown-header bg-gradient p-4 text-white text-left">Notifications
+                                <li class="dropdown-header bg-gradient p-4 text-white text-left">{{_('Notifications')}}
                                     <a href="#" class="float-right btn btn-square btn-inverse-light btn-xs m-0">
-                                        <span class="font-13"> Clear all</span></a>
+                                        <span class="font-13"> {{_('Clear all')}}</span></a>
                                 </li>
                                 <li class="dropdown-body min-h-240 nicescroll">
                                     <ul class="scrollbar scroll_dark max-h-240">
@@ -226,7 +241,7 @@
                                                         </div>
                                                     </div>
                                                     <div class="notify-message">
-                                                        <p class="font-weight-bold">New registered user</p>
+                                                        <p class="font-weight-bold">{{_('New registered user')}}</p>
                                                         <small>Just now</small>
                                                     </div>
                                                 </div>
@@ -295,7 +310,7 @@
                                     </ul>
                                 </li>
                                 <li class="dropdown-footer">
-                                    <a class="font-13" href="javascript:void(0)"> View All Notifications
+                                    <a class="font-13" href="javascript:void(0)"> {{_('View All Notifications')}}
                                     </a>
                                 </li>
                             </ul>
@@ -313,12 +328,13 @@
                                 <form>
                                     <div class="form-group">
                                         <i class="ti ti-search magnifier"></i>
-                                        <input type="text" class="form-control autocomplete" placeholder="Search Here" id="autocomplete-ajax" autofocus="autofocus">
+                                        <input type="text" class="form-control autocomplete" placeholder="{{_('Search Here')}}" id="autocomplete-ajax" autofocus="autofocus">
                                     </div>
                                 </form>
                             </div>
                         </div>
                     </li>
+                    @endif
                     <li class="nav-item dropdown user-profile">
                         <a href="javascript:void(0)" class="nav-link dropdown-toggle " id="navbarDropdown4" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <img src="{{asset('admin/assets/img/avtar/02.jpg')}}" alt="avtar-img">
@@ -337,31 +353,39 @@
                             </div>
                             <div class="p-4">
                                 <a class="dropdown-item d-flex nav-link" href="">
-                                    <i class="fa fa-user pr-2 text-success"></i> Profile</a>
+                                    <i class="fa fa-user pr-2 text-success"></i> {{_('Profile')}}</a>
+                                @if (Auth::guard('admin')->user()->email_verified_at)
                                 <a class="dropdown-item d-flex nav-link" href="{{route('admin.dashboard.mail_inbox')}}">
-                                    <i class="fa fa-envelope pr-2 text-primary"></i> Inbox
+                                    <i class="fa fa-envelope pr-2 text-primary"></i> {{_('Inbox')}}
                                     <span class="badge badge-primary ml-auto">6</span>
                                 </a>
+                                @endif
                                 <a class="dropdown-item d-flex nav-link" href="{{route('admin.dashboard.account_settings')}}">
-                                    <i class=" ti ti-settings pr-2 text-info"></i> Settings
+                                    <i class=" ti ti-settings pr-2 text-info"></i> {{_('Settings')}}
                                 </a>
+                                <a class="dropdown-item d-flex nav-link" href="{{route('admin.dashboard.logins.logout')}}">
+                                    <i class=" ti ti-power-off pr-2 text-info"></i> {{_('logout')}}
+                                </a>
+                                @if (Auth::guard('admin')->user()->email_verified_at)
                                 <div class="row mt-2">
                                     <div class="col">
                                         <a class="bg-light p-3 text-center d-block" href="{{route('admin.dashboard.app_chat')}}">
                                             <i class="fe fe-mail font-20 text-primary"></i>
-                                            <span class="d-block font-13 mt-2">My messages</span>
+                                            <span class="d-block font-13 mt-2">{{_('My messages')}}</span>
                                         </a>
                                     </div>
                                     <div class="col">
                                         <a class="bg-light p-3 text-center d-block" href="#">
                                             <i class="fe fe-plus font-20 text-primary"></i>
-                                            <span class="d-block font-13 mt-2">Compose new</span>
+                                            <span class="d-block font-13 mt-2">{{_('Compose new')}}</span>
                                         </a>
                                     </div>
                                 </div>
+                                @endif
                             </div>
                         </div>
                     </li>
+                    @endguest
                 </ul>
             </div>
         </div>

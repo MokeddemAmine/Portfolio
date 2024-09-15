@@ -9,53 +9,82 @@
                             <div class="col-sm-6 col-lg-5 col-xxl-3  align-self-center order-2 order-sm-1">
                                 <div class="d-flex align-items-center h-100-vh">
                                     <div class="register p-5">
-                                        <h1 class="mb-2">We are Mentor</h1>
-                                        <p>Welcome, Please create your account.</p>
-                                        <form action="http://themes.potenzaglobalsolutions.com/html/mentor-bootstrap-4-admin-dashboard-template/auth-register.html" class="mt-2 mt-sm-5">
+                                        <h1 class="mb-2">{{_("We are web developers")}}</h1>
+                                        <p>{{_('Welcome, Please create your account.')}}</p>
+                                        <form action="{{route('admin.dashboard.registers.store')}}" method="post" class="mt-2 mt-sm-5">
+                                            @csrf
                                             <div class="row">
+                                                <div class="col-12">
+                                                    <div class="form-group">
+                                                        <label class="control-label text-capitalize">{{ __('admin key') }}*</label>
+                                                        <input type="text" class="form-control @error('admin_key') is-invalid @enderror" name="admin_key" placeholder="{{_('Admin Key Please')}}" />
+                                                    </div>
+                                                    @if ($errors->has('admin_key'))
+                                                        <strong class="text-danger mb-3">{{ $errors->first('admin_key') }}</strong>
+                                                    @endif
+                                                </div>
+                                               
                                                 <div class="col-12 col-sm-6">
                                                     <div class="form-group">
-                                                        <label class="control-label">First Name*</label>
-                                                        <input type="text" class="form-control" placeholder="First Name" />
+                                                        <label class="control-label text-capitalize">{{_('first Name')}}*</label>
+                                                        <input type="text" value="{{old('first_name')}}" class="form-control @error('first_name') is-invalid @enderror" name="first_name" placeholder="{{_('First Name')}}" />
                                                     </div>
+                                                    @if ($errors->has('first_name'))
+                                                        <strong class="text-danger mb-3">{{ $errors->first('first_name') }}</strong>
+                                                    @endif
                                                 </div>
                                                 <div class="col-12 col-sm-6">
                                                     <div class="form-group">
-                                                        <label class="control-label">Last Name*</label>
-                                                        <input type="text" class="form-control" placeholder="Last Name" />
+                                                        <label class="control-label text-capitalize">{{_('last Name')}}*</label>
+                                                        <input type="text" value="{{old('last_name')}}" class="form-control @error('last_name') is-invalid @enderror" name="last_name" placeholder="{{_('Last Name')}}" />
                                                     </div>
+                                                    @if ($errors->has('last_name'))
+                                                        <strong class="text-danger mb-3">{{ $errors->first('last_name') }}</strong>
+                                                    @endif
                                                 </div>
                                                 <div class="col-12">
                                                     <div class="form-group">
-                                                        <label class="control-label">Email*</label>
-                                                        <input type="email" class="form-control" placeholder="Email" />
+                                                        <label class="control-label text-capitalize">{{_('email')}}*</label>
+                                                        <input type="email" value="{{old('email')}}" class="form-control @error('email') is-invalid @enderror" name="email" placeholder="{{_('Email')}}" />
                                                     </div>
+                                                    @if ($errors->has('email'))
+                                                        <strong class="text-danger mb-3">{{ $errors->first('email') }}</strong>
+                                                    @endif
                                                 </div>
                                                 <div class="col-12">
                                                     <div class="form-group">
-                                                        <label class="control-label">Username*</label>
-                                                        <input type="text" class="form-control" placeholder="Username" />
+                                                        <label class="control-label text-capitalize">{{_('password')}}*</label>
+                                                        <input type="password" class="form-control @error('password') is-invalid @enderror" name="password" placeholder="{{_('Password')}}" />
                                                     </div>
+                                                    @if ($errors->has('password'))
+                                                        <strong class="text-danger mb-3">{{ $errors->first('password') }}</strong>
+                                                    @endif
                                                 </div>
                                                 <div class="col-12">
                                                     <div class="form-group">
-                                                        <label class="control-label">Password*</label>
-                                                        <input type="password" class="form-control" placeholder="Password" />
+                                                        <label class="control-label text-capitalize">{{_('confirm password')}}*</label>
+                                                        <input type="password" class="form-control @error('password_confirmation') is-invalid @enderror" name="password_confirmation" placeholder="{{_('Confirm Password')}}" />
                                                     </div>
+                                                    @if ($errors->has('password_confirmation'))
+                                                        <strong class="text-danger mb-3">{{ $errors->first('password_confirmation') }}</strong>
+                                                    @endif
                                                 </div>
                                                 <div class="col-12">
                                                     <div class="form-check">
-                                                        <input class="form-check-input" type="checkbox" id="gridCheck">
+                                                        <input class="form-check-input @error('terms_conditions') is-invalid @enderror" name="terms_conditions" type="checkbox" id="gridCheck" value="agree">
                                                         <label class="form-check-label" for="gridCheck">
-                                                            I accept terms & policy
+                                                            {{_('I accept terms & policy')}}
                                                         </label>
                                                     </div>
+                                                    @if ($errors->has('terms_conditions'))
+                                                        <strong class="text-danger mb-3">{{ $errors->first('terms_conditions') }}</strong>
+                                                    @endif
                                                 </div>
                                                 <div class="col-12 mt-3">
-                                                    <a href="auth-login.html" class="btn btn-primary text-uppercase">Sign up</a>
+                                                    <button type="submit" class="btn btn-primary text-uppercase">{{_('sign up')}}</button>
                                                 </div>
                                                 <div class="col-12  mt-3">
-                                                    <p>Already have an account ?<a href="{{route('admin.dashboard.login')}}"> Sign In</a></p>
+                                                    <p>{{_('Already have an account ?')}}<a href="{{route('admin.dashboard.login')}}"> {{_("Sign In")}}</a></p>
                                                 </div>
                                             </div>
                                         </form>

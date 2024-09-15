@@ -34,7 +34,7 @@
      <div class="footer segments">
         <div class="container">
             <div class="box-content">
-                <p><a href="" target="_blank">Footer</a></p>
+                <p><a href="{{route('home')}}" class="text-uppercase" target="_blank">&copy; <?php echo date('Y'); ?> . All right reserved <span class="text-danger">Mokeddem Amine</span></a></p>
             </div>
         </div>
     </div>

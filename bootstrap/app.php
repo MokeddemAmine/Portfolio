@@ -1,5 +1,9 @@
 <?php
 
+use App\Http\Middleware\AuthAdmin;
+use App\Http\Middleware\email_verified;
+use App\Http\Middleware\IfAuthAdmin;
+use App\Http\Middleware\VerifiedAdminEmail;
 use Illuminate\Foundation\Application;
 use Illuminate\Foundation\Configuration\Exceptions;
 use Illuminate\Foundation\Configuration\Middleware;
@@ -11,7 +15,12 @@ return Application::configure(basePath: dirname(__DIR__))
         health: '/up',
     )
     ->withMiddleware(function (Middleware $middleware) {
-        //
+        $middleware->alias([
+            'is_admin'          => AuthAdmin::class,
+            'is_verify_email'   => VerifiedAdminEmail::class,
+            'email_verified'    => email_verified::class,  
+            'if_auth_admin'     => IfAuthAdmin::class,  
+        ]);
     })
     ->withExceptions(function (Exceptions $exceptions) {
         //
