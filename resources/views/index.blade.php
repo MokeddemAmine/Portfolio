@@ -3,6 +3,36 @@
 @section('title','Amine Mokeddem')
     
 @section('content')
+    <!-- home intro -->
+    <div class="home-intro segments">
+        <div class="container">
+            <div class="intro-content box-content">
+                <div class="row justify-content-center">
+                    <div class="col-md-8 col-sm-12 col-xs-12">
+                        <div class="intro-caption">
+                            <span>I am @if ($home)
+                                {{$home->name}}
+                            @endif</span>
+                            <h2 class="text-uppercase">@if ($home)
+                                {{$home->title}}
+                            @endif</h2>
+                            
+                            <a href="@if($home) {{$home->contacts}} @endif" target="_blank" class="button">Contact Me</a>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-12 col-xs-12">
+                        <div class="intro-image">
+                            @if ($home)
+                            <img src="{{asset('storage/'.$home->picture)}}" alt="{{$home->name}} picture" />
+                            @endif
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end home intro -->
     <!-- about -->
     <div id="about" class="about segments">
         <div class="container">
@@ -14,14 +44,20 @@
                                 <h3>About Me</h3>
                             </div>
                             <div class="content">
-                                <h2>I am a Graphic Designer</h2>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut doloremque ratione perferendis possimus voluptatibus distinctio
-                                autem expedita qui unde modi impedit officia illum praesentium amet, vero quos natus veritatis totam!</p>
+                                <h2>I am @if ($about)
+                                    <span class="text-capitalize">{{$about->title}}</span>
+                                @endif</h2>
+                                @if ($about)
+                                    <p>{{$about->description}}</p>
+                                @endif
+                                
                             </div>
                         </div>
                     </div>
                     <div class="col-md-6 col-sm-12 col-xs-12">
-                        <div class="content-right"></div>
+                        <div class="content-right" @if ($about)
+                            style="background-image: url({{asset('storage/'.$about->picture)}})"
+                        @endif></div>
                     </div>
                 </div>
             </div>
@@ -413,21 +449,59 @@
                             <div class="section-title section-title-left">
                                 <h3>Contact Me</h3>
                             </div>
-                            <h2>Realize your dream with us</h2>
-                            <ul>
-                                <li>
-                                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                                </li>
-                                <li>
-                                    <a href="#"><i class="fab fa-twitter"></i></a>
-                                </li>
-                                <li>
-                                    <a href="#"><i class="fab fa-dribbble"></i></a>
-                                </li>
-                                <li>
-                                    <a href="#"><i class="fab fa-google"></i></a>
-                                </li>
-                            </ul>
+                            @if ($contact)
+                                <h2 class="text-capitalize">{{$contact->title}}</h2>
+                                @php
+                                    $links = json_decode($contact->contacts);
+                                @endphp
+                                @if ($links)
+                                    <ul>
+                                        @if ($links->website)
+                                        <li>
+                                            <a href="{{$links->website}}"><i class="fab fa-dribbble"></i></a>
+                                        </li>
+                                        @endif
+                                        @if ($links->gmail)
+                                            <li>
+                                                <a href="mailto:{{$links->gmail}}"><i class="fab fa-google"></i></a>
+                                            </li>
+                                        @endif
+                                        @if ($links->linkedin)
+                                        <li>
+                                            <a href="{{$links->linkedin}}"><i class="fab fa-linkedin"></i></a>
+                                        </li>
+                                        @endif
+                                        @if ($links->github)
+                                        <li>
+                                            <a href="{{$links->github}}"><i class="fab fa-github"></i></a>
+                                        </li>
+                                        @endif
+                                        @if ($links->facebook)
+                                        <li>
+                                            <a href="{{$links->facebook}}"><i class="fab fa-facebook-f"></i></a>
+                                        </li>
+                                        @endif
+                                        @if ($links->x_twitter)
+                                        <li>
+                                            <a href="{{$links->x_twitter}}"><i class="fab fa-twitter"></i></a>
+                                        </li>
+                                        @endif
+                                        @if ($links->instagram)
+                                        <li>
+                                            <a href="{{$links->instagram}}"><i class="fab fa-instagram"></i></a>
+                                        </li>
+                                        @endif
+                                        @if ($links->pinterest)
+                                        <li>
+                                            <a href="{{$links->pinterest}}"><i class="fab fa-pinterest"></i></a>
+                                        </li>
+                                        @endif
+                                        
+                                        
+                                    </ul>
+                                @endif
+                            @endif
+                            
                         </div>
                     </div>
                     <div class="col-md-6 col-sm-12 col-xs-12">

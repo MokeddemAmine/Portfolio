@@ -5,6 +5,8 @@ use App\Http\Controllers\admin\auth\AdminLoginController;
 use App\Http\Controllers\admin\auth\AdminPasswordController;
 use App\Http\Controllers\admin\auth\AdminRegisterController;
 use App\Http\Controllers\admin\auth\AdminVerificationEmailController;
+use App\Http\Controllers\admin\main\AdminMainAboutController;
+use App\Http\Controllers\admin\main\AdminMainContactController;
 use App\Http\Controllers\admin\main\AdminMainHomeController;
 use Illuminate\Support\Facades\Route;
 
@@ -31,12 +33,6 @@ Route::prefix('/admin/dashboard')->name('admin.dashboard.')->group(function(){
         
     });
 
-    Route::prefix('/main')->name('main.')->group(function(){
-        Route::controller(AdminMainHomeController::class)->group(function(){
-            Route::get('/','index')->name('index');
-        });
-    });
-
     Route::controller(AdminVerificationEmailController::class)->group(function(){
         Route::middleware('email_verified')->group(function(){
             Route::middleware('is_admin')->group(function(){
@@ -45,7 +41,6 @@ Route::prefix('/admin/dashboard')->name('admin.dashboard.')->group(function(){
             });
             Route::get('/verify_email_send/{user_id}/{user_email}/{user_created_at}','verify_email_send');
         });
-        
     });
 
     Route::controller(AdminLoginController::class)->group(function(){
@@ -70,6 +65,32 @@ Route::prefix('/admin/dashboard')->name('admin.dashboard.')->group(function(){
             Route::post('/register','store')->name('registers.store');
         });
 
+    });
+
+    Route::prefix('/main')->name('main.')->group(function(){
+        Route::prefix('/home')->name('home.')->group(function(){
+            Route::controller(AdminMainHomeController::class)->group(function(){
+                Route::get('/','index')->name('index');
+                Route::get('/edit','edit')->name('edit');
+                Route::post('/','store')->name('store');
+            });
+        });
+
+        Route::prefix('/about')->name('about.')->group(function(){
+            Route::controller(AdminMainAboutController::class)->group(function(){
+                Route::get('/','index')->name('index');
+                Route::get('/edit','edit')->name('edit');
+                Route::post('/','store')->name('store');
+            });
+        });
+
+        Route::prefix('/contact')->name('contact.')->group(function(){
+            Route::controller(AdminMainContactController::class)->group(function(){
+                Route::get('/','index')->name('index');
+                Route::get('/edit','edit')->name('edit');
+                Route::post('/','store')->name('store');
+            });
+        });
     });
 
    

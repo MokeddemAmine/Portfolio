@@ -41,28 +41,7 @@
     </div>
     <!-- end navbar -->
 
-    <!-- home intro -->
-    <div class="home-intro segments">
-        <div class="container">
-            <div class="intro-content box-content">
-                <div class="row justify-content-center">
-                    <div class="col-md-8 col-sm-12 col-xs-12">
-                        <div class="intro-caption">
-                            <span>I am Bleak Peaker</span>
-                            <h2>Graphic Designer</h2>
-                            <button class="button">Contact Me</button>
-                        </div>
-                    </div>
-                    <div class="col-md-4 col-sm-12 col-xs-12">
-                        <div class="intro-image">
-                            <img src="{{asset('assets/images/intro-image.jpg')}}" alt="">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- end home intro -->
+   
 
 </header>
 <!-- end header -->

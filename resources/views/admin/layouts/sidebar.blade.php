@@ -22,12 +22,12 @@
                     <li> 
                         <a class="has-arrow" href="javascript:void(0)"  aria-expanded="false" ><span class="nav-title">{{_('Main')}}</span></a> 
                         <ul aria-expanded="false">
-                            <li><a href="{{route('admin.dashboard.main.index')}}" class="text-capitalize">home</a></li>
-                            <li><a href="" class="text-capitalize">about</a></li>
+                            <li><a href="{{route('admin.dashboard.main.home.index')}}" class="text-capitalize">home</a></li>
+                            <li><a href="{{route('admin.dashboard.main.about.index')}}" class="text-capitalize">about</a></li>
                             <li><a href="" class="text-capitalize">resume</a></li>
                             <li><a href="" class="text-capitalize">portfolio</a></li>
                             <li><a href="" class="text-capitalize">blog</a></li>
-                            <li><a href="" class="text-capitalize">contact</a></li>
+                            <li><a href="{{route('admin.dashboard.main.contact.index')}}" class="text-capitalize">contact</a></li>
                         </ul>
                     </li>
                     <li> <a href="{{route('admin.dashboard.account_settings')}}">{{_('Account Settings')}}</a> </li>

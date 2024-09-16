@@ -18,6 +18,21 @@
                                 
                             </div>
                             <!-- end page title -->
+                            <div class="page-content my-4">
+                                <div class="container">
+                                    @if ($home)
+                                        <div class="row" style="max-width: 800px">
+                                            <div class="col-4">Your Name:</div>
+                                            <div class="col-8">Mokeddem Amine</div>
+                                        </div>
+                                        <a href="" class="btn btn-success btn-sm my-3 text-capitalize">edit info</a>
+                                    @else 
+                                        <div class="text-info my-3">You dont set any information yet</div>
+                                        <a href="" class="btn btn-info btn-sm my-3 text-capitalize">Add info</a>
+                                    @endif
+                                    
+                                </div>
+                            </div>
                         </div>
                     </div>
                     
