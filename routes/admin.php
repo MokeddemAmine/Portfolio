@@ -8,6 +8,8 @@ use App\Http\Controllers\admin\auth\AdminVerificationEmailController;
 use App\Http\Controllers\admin\main\AdminMainAboutController;
 use App\Http\Controllers\admin\main\AdminMainContactController;
 use App\Http\Controllers\admin\main\AdminMainHomeController;
+use App\Http\Controllers\admin\main\AdminMainResumeContentController;
+use App\Http\Controllers\admin\main\AdminMainResumeController;
 use Illuminate\Support\Facades\Route;
 
 Route::prefix('/admin/dashboard')->name('admin.dashboard.')->group(function(){
@@ -89,6 +91,27 @@ Route::prefix('/admin/dashboard')->name('admin.dashboard.')->group(function(){
                 Route::get('/','index')->name('index');
                 Route::get('/edit','edit')->name('edit');
                 Route::post('/','store')->name('store');
+            });
+        });
+
+        Route::prefix('/resume')->name('resume.')->group(function(){
+            Route::controller(AdminMainResumeController::class)->group(function(){
+                Route::get('/','index')->name('index');
+                Route::get('/create','create')->name('create');
+                Route::post('/','store')->name('store');
+                Route::get('/{resume}','show')->name('show');
+                Route::get('/{resume}/edit','edit')->name('edit');
+                Route::put('/{resume}','update')->name('update');
+                Route::delete('/{resume}','destroy')->name('destroy');
+            });
+            Route::prefix('/content')->name('content.')->group(function(){
+                Route::controller(AdminMainResumeContentController::class)->group(function(){
+                    Route::get('/{resume}/create','create')->name('create');
+                    Route::post('/{resume}','store')->name('store');
+                    Route::get('/{resume}/{content}/edit','edit')->name('edit');
+                    Route::put('/{resume}/{content}','update')->name('update');
+                    Route::delete('/{content}','destroy')->name('destroy');
+                });
             });
         });
     });
