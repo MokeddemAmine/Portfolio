@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Home;
+use App\Models\Resume;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -27,6 +28,7 @@ class HomeController extends Controller
         $home = Home::where('section','home')->first();
         $about = Home::where('section','about')->first();
         $contact = Home::where('section','contact')->first();
-        return view('index',compact('home','about','contact'));
+        $resume = Resume::all();
+        return view('index',compact('home','about','contact','resume'));
     }
 }
