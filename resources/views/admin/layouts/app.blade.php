@@ -15,6 +15,8 @@
     <link rel="stylesheet" type="text/css" href="{{asset('admin/assets/css/vendors.css')}}" />
     <!-- app style -->
     <link rel="stylesheet" type="text/css" href="{{asset('admin/assets/css/style.css')}}" />
+    {{-- main style --}}
+    <link rel="stylesheet" href="{{asset('admin.assets/css/main.css')}}" />
 
     <title>@yield('title','dashboard')</title>
 </head>

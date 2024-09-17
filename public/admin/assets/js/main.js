@@ -10,4 +10,8 @@ $(document).ready(function(){
             $(this).siblings('.form-delete').submit();
         }
     })
+    // delete picture when edit project of portfolio
+    $('.picture .close').click(function(){
+        $(this).parent('.picture').remove();
+    })
 })

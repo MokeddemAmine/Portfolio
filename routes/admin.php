@@ -8,6 +8,8 @@ use App\Http\Controllers\admin\auth\AdminVerificationEmailController;
 use App\Http\Controllers\admin\main\AdminMainAboutController;
 use App\Http\Controllers\admin\main\AdminMainContactController;
 use App\Http\Controllers\admin\main\AdminMainHomeController;
+use App\Http\Controllers\admin\main\AdminMainPortfolioController;
+use App\Http\Controllers\admin\main\AdminMainProjectController;
 use App\Http\Controllers\admin\main\AdminMainResumeContentController;
 use App\Http\Controllers\admin\main\AdminMainResumeController;
 use Illuminate\Support\Facades\Route;
@@ -112,6 +114,30 @@ Route::prefix('/admin/dashboard')->name('admin.dashboard.')->group(function(){
                     Route::put('/{resume}/{content}','update')->name('update');
                     Route::delete('/{content}','destroy')->name('destroy');
                 });
+            });
+        });
+
+        Route::prefix('/portfolio')->name('portfolio.')->group(function(){
+            Route::controller(AdminMainPortfolioController::class)->group(function(){
+                Route::get('/','index')->name('index');
+                Route::get('/create','create')->name('create');
+                Route::post('/','store')->name('store');
+                Route::get('/{portfolio}','show')->name('show');
+                Route::get('/{portfolio}/edit','edit')->name('edit');
+                Route::put('/{portfolio}','update')->name('update');
+                Route::delete('/{portfolio}','destroy')->name('destroy');
+            });
+
+            Route::prefix('/project')->name('project.')->group(function(){
+                Route::controller(AdminMainProjectController::class)->group(function(){
+                    Route::get('/create','create')->name('create');
+                    Route::post('/','store')->name('store');
+                    Route::get('/{project}','show')->name('show');
+                    Route::get('/{project}/edit','edit')->name('edit');
+                    Route::put('/{project}','update')->name('update');
+                    Route::delete('/{project}','destroy')->name('destroy');
+                });
+                
             });
         });
     });
