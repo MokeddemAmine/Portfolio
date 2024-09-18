@@ -57,6 +57,15 @@
                                             @endif
                                         </div>
                                         <div class="form-group row align-items-center center mb-3">
+                                            <label for="link" class="col-md-4 text-capitalize">link :</label>
+                                            <div class="col-md-8">
+                                                <input type="url" name="link" value="{{$project->link}}" placeholder="Set A link " id="link" class="form-control @error('link') is-invalid @enderror" />
+                                            </div>
+                                            @if($errors->has('link'))
+                                                <strong class="text-danger mb-3">{{ $errors->first('link') }}</strong>
+                                            @endif
+                                        </div>
+                                        <div class="form-group row align-items-center center mb-3">
                                             <label for="pictures" class="col-md-4 text-capitalize">current pictures :</label>
                                             <div class="col-md-8">
                                                 @php

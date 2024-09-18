@@ -136,6 +136,7 @@ Route::prefix('/admin/dashboard')->name('admin.dashboard.')->group(function(){
                     Route::get('/{project}/edit','edit')->name('edit');
                     Route::put('/{project}','update')->name('update');
                     Route::delete('/{project}','destroy')->name('destroy');
+                    Route::post('/checkMainPage','checkProjectIntoMainPage')->name('checkProjectIntoMainPage');
                 });
                 
             });

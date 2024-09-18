@@ -21,6 +21,7 @@ class AdminMainProjectController extends Controller
             'title'         => ['required','string'],
             'sub_title'     => ['required','string'],
             'description'   => ['required','string'],
+            'link'          => ['nullable','string'],
             'pictures.*'    => ['required','image','mimes:jpeg,png,jpg,gif','max:2048'],
             'section'       => ['nullable','exists:portfolios,id'],
         ]);
@@ -43,6 +44,7 @@ class AdminMainProjectController extends Controller
                 'title'         => $request->title,
                 'sub_title'     => $request->sub_title,
                 'description'   => $request->description,
+                'link'          => $request->link,
                 'pictures'      => $pictures,
             ]);
     
@@ -73,6 +75,7 @@ class AdminMainProjectController extends Controller
             'title'                 => ['required','string'],
             'sub_title'             => ['required','string'],
             'description'           => ['required','string'],
+            'link'                  => ['nullable','string'],
             'current_pictures.*'    => ['string'],
             'new_pictures.*'        => ['image','mimes:jpeg,png,jpg,gif','max:2048'],
             'section'               => ['nullable','exists:portfolios,id'],
@@ -147,6 +150,7 @@ class AdminMainProjectController extends Controller
                 'title'         => $request->title,
                 'sub_title'     => $request->sub_title,
                 'description'   => $request->description,
+                'link'          => $request->link,
                 'pictures'      => $pictures,   
             ]);
             return redirect()->back()->with('successMessage','Project updated with success');
@@ -162,5 +166,41 @@ class AdminMainProjectController extends Controller
         }
         $project->delete();
         return redirect()->back()->with('successMessage','project deleted with success');
+    }
+
+    public function checkProjectIntoMainPage(Request $request){
+        
+        $request->validate([
+            'project_id'    => ['required','numeric','exists:projects,id'],
+        ]);
+        $project = project::find($request->project_id);
+        
+
+        if($project->main_page == 1){
+            $project->update([
+                'main_page' => 0,
+            ]);
+            return response()->json([
+                'status'    => 'deleted',
+                'project'   => 'project '.$project->title.' deleted from main page'
+            ]);
+        }
+        
+        $projects_checked = project::where('main_page',1)->get();
+        if(count($projects_checked) == 6){
+            return response()->json([
+                'status'    => false,
+                'project'   => 'we can not set more than 6 projects in the main page '
+            ]);
+        }else{
+            $project->update([
+                'main_page' => 1,
+            ]);
+            return response()->json([
+                'status'    => true,
+                'project'   => 'project '.$project->title.' added to main page'
+            ]);
+        }
+        return response()->json(['project'  => $request->project_id]);
     }
 }

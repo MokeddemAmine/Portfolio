@@ -12,7 +12,9 @@ class project extends Model
         'title',
         'sub_title',
         'description',
+        'link',
         'pictures',
+        'main_page',
     ];
 
     public function section(){

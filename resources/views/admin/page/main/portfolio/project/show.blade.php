@@ -80,6 +80,12 @@
                                         </div>
                                     </div>
                                     <div class="row my-3">
+                                        <label for="" class="col-md-2">Link: </label>
+                                        <div class="col-md-10 text-dark font-weight-bold">
+                                            <a href="{{$project->link}}" target="_blank">{{$project->link}}</a>
+                                        </div>
+                                    </div>
+                                    <div class="row my-3">
                                         <label for="" class="col-md-2">Created At: </label>
                                         <div class="col-md-10 text-dark font-weight-bold">{{$project->created_at->format('Y/m/d')}}</div>
                                     </div>

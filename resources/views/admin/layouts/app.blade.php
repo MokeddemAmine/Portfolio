@@ -7,6 +7,8 @@
     <meta name="description" content="dashboard to amine mokeddem portfolio webiste" />
     <meta name="author" content="Amine Mokeddem" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+
     <!-- app favicon -->
     <link rel="shortcut icon" href="{{asset("admin/assets/img/favicon.ico")}}">
     <!-- google fonts -->
@@ -17,6 +19,9 @@
     <link rel="stylesheet" type="text/css" href="{{asset('admin/assets/css/style.css')}}" />
     {{-- main style --}}
     <link rel="stylesheet" href="{{asset('admin.assets/css/main.css')}}" />
+
+    {{-- alert swal style --}}
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
 
     <title>@yield('title','dashboard')</title>
 </head>
@@ -62,6 +67,8 @@
     <!-- custom app -->
     <script src="{{asset('admin/assets/js/app.js')}}"></script>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.all.min.js"></script>
     <script src="{{asset('admin/assets/js/main.js')}}"></script>
+    @yield('special-script')
 </body>
 </html>
