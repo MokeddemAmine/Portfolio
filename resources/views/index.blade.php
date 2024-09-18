@@ -193,120 +193,33 @@
                 <div class="section-title">
                     <h3>My Portfolio</h3>
                 </div>
-                <div class="portfolio-filter-menu">
-                    <ul>
-                        <li data-filter="all" class="active">
-                            <span>See All</span>
-                        </li>
-                        <li data-filter="1">
-                            <span>House Plant</span>
-                        </li>
-                        <li data-filter="2">
-                            <span>Flowers</span>
-                        </li>
-                        <li data-filter="3">
-                            <span>Photography</span>
-                        </li>
-                    </ul>
-                </div>
-
-                <div class="row no-gutters filtr-container">
-                    <div class="col-md-4 col-sm-12 col-xs-12 filtr-item" data-category="3">
-                        <div class="content-image">
-                            <a href="{{asset('assets/images/portfolio1.jpg')}}" class="portfolio-popup">
-                                <img src="{{asset('assets/images/portfolio1.jpg')}}" alt="">
-                                <div class="image-overlay"></div>
-                                <div class="portfolio-caption">
-                                    <div class="title">
-                                        <h4>Classic Minimalist Door</h4>
+                @if ($portfolio && count($portfolio))
+                    <div class="row no-gutters filtr-container">
+                        @foreach ($portfolio as $project)
+                        @php
+                            $image = json_decode($project->pictures)[0];
+                        @endphp
+                        <div class="col-md-4 col-sm-12 col-xs-12 filtr-item" data-category="1">
+                            <div class="content-image">
+                                <a href="{{asset('storage/'.$image)}}" class="portfolio-popup">
+                                    <img src="{{asset('storage/'.$image)}}" alt="">
+                                    <div class="image-overlay"></div>
+                                    <div class="portfolio-caption">
+                                        <div class="title">
+                                            <h4>{{$project->title}}</h4>
+                                        </div>
+                                        <div class="subtitle">
+                                            <span>{{$project->sub_title}}</span>
+                                        </div>
                                     </div>
-                                    <div class="subtitle">
-                                        <span>Graphic Design</span>
-                                    </div>
-                                </div>
-                            </a>
+                                </a>
+                            </div>
                         </div>
+                        @endforeach
                     </div>
-                    <div class="col-md-4 col-sm-12 col-xs-12 filtr-item" data-category="1">
-                        <div class="content-image">
-                            <a href="{{asset('assets/images/portfolio2.jpg')}}" class="portfolio-popup">
-                                <img src="{{asset('assets/images/portfolio2.jpg')}}" alt="">
-                                <div class="image-overlay"></div>
-                                <div class="portfolio-caption">
-                                    <div class="title">
-                                        <h4>Green Succulent Plants</h4>
-                                    </div>
-                                    <div class="subtitle">
-                                        <span>Nature Plant</span>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-md-4 col-sm-12 col-xs-12 filtr-item" data-category="2, 1">
-                        <div class="content-image">
-                            <a href="{{asset('assets/images/portfolio3.jpg')}}" class="portfolio-popup">
-                                <img src="{{asset('assets/images/portfolio3.jpg')}}" alt="">
-                                <div class="image-overlay"></div>
-                                <div class="portfolio-caption">
-                                    <div class="title">
-                                        <h4>Yellow Rose Pale Plant</h4>
-                                    </div>
-                                    <div class="subtitle">
-                                        <span>Flower Plant</span>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-md-4 col-sm-12 col-xs-12 filtr-item" data-category="3">
-                        <div class="content-image">
-                            <a href="{{asset('assets/images/portfolio4.jpg')}}" class="portfolio-popup">
-                                <img src="{{asset('assets/images/portfolio4.jpg')}} " alt="">
-                                <div class="image-overlay"></div>
-                                <div class="portfolio-caption">
-                                    <div class="title">
-                                        <h4>Succulent Plant in Pot</h4>
-                                    </div>
-                                    <div class="subtitle">
-                                        <span>Plant House</span>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-md-4 col-sm-12 col-xs-12 filtr-item" data-category="1, 2">
-                        <div class="content-image">
-                            <a href="{{asset('assets/images/portfolio5.jpg')}}" class="portfolio-popup">
-                                <img src="{{asset('assets/images/portfolio5.jpg')}}" alt="">
-                                <div class="image-overlay"></div>
-                                <div class="portfolio-caption">
-                                    <div class="title">
-                                        <h4>Photo of Green Cactus</h4>
-                                    </div>
-                                    <div class="subtitle">
-                                        <span>Plant House</span>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-md-4 col-sm-12 col-xs-12 filtr-item" data-category="3, 1">
-                        <div class="content-image">
-                            <a href="{{asset('assets/images/portfolio6.jpg')}}" class="portfolio-popup">
-                                <img src="{{asset('assets/images/portfolio6.jpg')}}" alt="">
-                                <div class="image-overlay"></div>
-                                <div class="portfolio-caption">
-                                    <div class="title">
-                                        <h4>Two Feet of Two Ferns</h4>
-                                    </div>
-                                    <div class="subtitle">
-                                        <span>Graphic Design</span>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
+                @endif
+                <div class="text-center my-2">
+                    <a href="{{route('portfolio')}}" class="text-primary text-uppercase">show all projects <i class="fas fa-chevron-right"></i></a>
                 </div>
             </div>
         </div>

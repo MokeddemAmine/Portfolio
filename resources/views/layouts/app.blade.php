@@ -49,7 +49,7 @@
     <script src="{{asset('assets/js/jquery.magnific-popup.min.js')}}"></script>
     <script src="{{asset('assets/js/contact-form.js')}}"></script>
     <script src="{{asset('assets/js/main.js')}}"></script>
-
+    @yield('special-script')
 
 </body>
 
