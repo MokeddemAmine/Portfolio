@@ -4,8 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <link rel="icon" href="{{asset('assets/images/favicon.png')}}">
+    @if ($logo)
+        <link rel="icon" href="{{asset('storage/'.$logo->picture)}}">
+    @endif
+    
     <title>@yield('title')</title>
 
     <!-- font -->

@@ -7,7 +7,19 @@
 
             <!-- navbar brand or logo -->
             <a href="{{route('home')}}" class="navbar-brand">
-                <h2>BLEAK</h2>
+                <h2 class="text-uppercase">
+                    @if ($logo)
+                        @if ($logo->name)
+                            <img src="{{asset('storage/'.$logo->picture)}}" width="30" alt="">
+                        @endif
+                        @if ($logo->description)
+                            {{$logo->title}}
+                        @endif
+                        
+                    @else 
+                    LOGO
+                    @endif
+                </h2>
             </a>
             <!-- end navbar brand or logo -->
 

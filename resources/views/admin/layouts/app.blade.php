@@ -10,7 +10,10 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <!-- app favicon -->
-    <link rel="shortcut icon" href="{{asset("admin/assets/img/favicon.ico")}}">
+    @if ($logo)
+    <link rel="shortcut icon" href="{{asset("storage/".$logo->picture)}}">
+    @endif
+    
     <!-- google fonts -->
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
     <!-- plugin stylesheets -->
