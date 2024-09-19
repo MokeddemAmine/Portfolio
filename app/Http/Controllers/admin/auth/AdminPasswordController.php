@@ -64,9 +64,9 @@ class AdminPasswordController extends Controller
             PasswordResetToken::where('email',$admin->email)->first()->delete();
             // redirect to a special page
             if(Auth::guard('admin')->user() && Auth::guard('admin')->user()->email == $admin->email){
-                return redirect()->route('admin.dashboard.index')->with('successMessage','password reset with success');
+                return redirect()->route('admin.index')->with('successMessage','password reset with success');
             }else{
-                return redirect()->route('admin.dashboard.login')->with('successMessage','password reset with success');
+                return redirect()->route('admin.login')->with('successMessage','password reset with success');
             }
             
         }

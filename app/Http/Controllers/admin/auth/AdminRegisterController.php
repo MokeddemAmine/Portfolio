@@ -35,6 +35,6 @@ class AdminRegisterController extends Controller
 
         Mail::to($user->email)->send(new UserRegistered($user));
         
-        return redirect()->route('admin.dashboard.login')->with('successMessage','Your Registration is setting successfully');
+        return redirect()->route('admin.login')->with('successMessage','Your Registration is setting successfully');
     }
 }

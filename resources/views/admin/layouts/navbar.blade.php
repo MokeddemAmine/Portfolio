@@ -98,7 +98,11 @@
                     @endif
                     <li class="nav-item dropdown user-profile">
                         <a href="javascript:void(0)" class="nav-link dropdown-toggle " id="navbarDropdown4" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <img src="{{asset('admin/assets/img/avtar/02.jpg')}}" alt="avtar-img">
+                            @if (Auth::guard('admin')->user()->picture)
+                                <img src="{{asset('storage/'.Auth::guard('admin')->user()->picture)}}" alt="admin image">
+                            @else 
+                                <img src="{{asset('admin/assets/img/user.png')}}" alt="admin image">
+                            @endif
                             <span class="bg-success user-status"></span>
                         </a>
                         <div class="dropdown-menu animated fadeIn" aria-labelledby="navbarDropdown">

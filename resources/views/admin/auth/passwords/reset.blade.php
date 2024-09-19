@@ -17,7 +17,7 @@
                                         @if (session('successMessage'))
                                             <strong class="text-success mb-3">{{session('successMessage')}}</strong>
                                         @endif
-                                        <form action="{{route('admin.dashboard.password.update')}}" method="post" class="mt-3 mt-sm-5">
+                                        <form action="{{route('admin.password.update')}}" method="post" class="mt-3 mt-sm-5">
                                             @csrf
                                             <input type="hidden" name="token" value="{{$token}}">
                                             <div class="row">

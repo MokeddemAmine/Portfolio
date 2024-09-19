@@ -36,9 +36,9 @@
                                                 <div class="row my-2">
                                                     <div class="col text-uppercase">{{$item->section}}</div>
                                                     <div class="col text-capitalize">
-                                                        <a href="{{route('admin.dashboard.main.portfolio.show',$item->id)}}" class="btn btn-info btn-sm text-capitalize">show</a>
-                                                        <a href="{{route('admin.dashboard.main.portfolio.edit',$item->id)}}" class="btn btn-success btn-sm text-capitalize my-2 my-md-0">edit</a>
-                                                        <form action="{{route('admin.dashboard.main.portfolio.destroy',$item->id)}}" method="POST" class="d-none form-delete">
+                                                        <a href="{{route('admin.dashboard.portfolio.show',$item->id)}}" class="btn btn-info btn-sm text-capitalize">show</a>
+                                                        <a href="{{route('admin.dashboard.portfolio.edit',$item->id)}}" class="btn btn-success btn-sm text-capitalize my-2 my-md-0">edit</a>
+                                                        <form action="{{route('admin.dashboard.portfolio.destroy',$item->id)}}" method="POST" class="d-none form-delete">
                                                             @csrf
                                                             @method('DELETE')
                                                         </form>
@@ -52,7 +52,7 @@
                                         <div class="text-info my-3">You dont set any portfolio section yet</div>
                                         
                                     @endif
-                                    <a href="{{route('admin.dashboard.main.portfolio.create')}}" class="btn btn-info btn-sm my-3 text-capitalize">add porfolio section</a>
+                                    <a href="{{route('admin.dashboard.portfolio.create')}}" class="btn btn-info btn-sm my-3 text-capitalize">add porfolio section</a>
                                 </div>
                             </div>
                         </div>
@@ -116,9 +116,9 @@
                                                         </div>
                                                     </div>
                                                     <div class="col-md-3 text-capitalize">
-                                                        <a href="{{route('admin.dashboard.main.portfolio.project.show',$project->id)}}" class="btn btn-info btn-sm text-capitalize">show</a>
-                                                        <a href="{{route('admin.dashboard.main.portfolio.project.edit',$project->id)}}" class="btn btn-success btn-sm text-capitalize my-2 my-md-0">edit</a>
-                                                        <form action="{{route('admin.dashboard.main.portfolio.project.destroy',$project->id)}}" method="POST" class="d-none form-delete">
+                                                        <a href="{{route('admin.dashboard.portfolio.project.show',$project->id)}}" class="btn btn-info btn-sm text-capitalize">show</a>
+                                                        <a href="{{route('admin.dashboard.portfolio.project.edit',$project->id)}}" class="btn btn-success btn-sm text-capitalize my-2 my-md-0">edit</a>
+                                                        <form action="{{route('admin.dashboard.portfolio.project.destroy',$project->id)}}" method="POST" class="d-none form-delete">
                                                             @csrf
                                                             @method('DELETE')
                                                         </form>
@@ -132,7 +132,7 @@
                                         <div class="text-info my-3">You dont set any projects yet</div>
                                         
                                     @endif
-                                    <a href="{{route('admin.dashboard.main.portfolio.project.create')}}" class="btn btn-info btn-sm my-3 text-capitalize">add project</a>
+                                    <a href="{{route('admin.dashboard.portfolio.project.create')}}" class="btn btn-info btn-sm my-3 text-capitalize">add project</a>
                                 </div>
                             </div>
                         </div>
@@ -150,7 +150,7 @@
                 let that = $(this);
                 $.ajax({
                     method:'POST',
-                    url:'{{route('admin.dashboard.main.portfolio.project.checkProjectIntoMainPage')}}',
+                    url:'{{route('admin.dashboard.portfolio.project.checkProjectIntoMainPage')}}',
                     data:{
                         _token: $('meta[name="csrf-token"]').attr('content'),
                         project_id:$(this).val(),

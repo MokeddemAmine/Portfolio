@@ -13,7 +13,7 @@
                             <!-- begin page title -->
                             <div class="d-block d-lg-flex flex-nowrap align-items-center">
                                 <div class="page-title mr-4 pr-4 border-right">
-                                    <h1>Main / <a href="{{route('admin.dashboard.main.portfolio.index')}}">Project</a> / <span class="text-secondary"> {{$project->title}} </span></h1>
+                                    <h1>Main / <a href="{{route('admin.dashboard.portfolio.index')}}">Project</a> / <span class="text-secondary"> {{$project->title}} </span></h1>
                                 </div>
                                 
                             </div>
@@ -27,8 +27,8 @@
                             <div class="page-content my-4">
                                 <div class="container">
                                     <div class="my-2 text-right">
-                                        <a href="{{route('admin.dashboard.main.portfolio.project.edit',$project->id)}}" class="btn btn-success btn-sm text-capitalize my-2 my-md-0">edit</a>
-                                        <form action="{{route('admin.dashboard.main.portfolio.project.destroy',$project->id)}}" method="POST" class="d-none form-delete">
+                                        <a href="{{route('admin.dashboard.portfolio.project.edit',$project->id)}}" class="btn btn-success btn-sm text-capitalize my-2 my-md-0">edit</a>
+                                        <form action="{{route('admin.dashboard.portfolio.project.destroy',$project->id)}}" method="POST" class="d-none form-delete">
                                             @csrf
                                             @method('DELETE')
                                         </form>

@@ -18,7 +18,7 @@ class AdminHomeController extends Controller
         return view('admin.index');
     }
     public function mail_inbox(){
-        $messages = Message::all();
+        $messages = Message::orderBy('created_at','desc')->get();
         return view('admin.mail-inbox',compact('messages'));
     }
     public function account_settings(){

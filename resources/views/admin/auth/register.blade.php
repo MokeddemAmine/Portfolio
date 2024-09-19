@@ -11,7 +11,7 @@
                                     <div class="register p-5">
                                         <h1 class="mb-2">{{_("We are web developers")}}</h1>
                                         <p>{{_('Welcome, Please create your account.')}}</p>
-                                        <form action="{{route('admin.dashboard.registers.store')}}" method="post" class="mt-2 mt-sm-5">
+                                        <form action="{{route('admin.registers.store')}}" method="post" class="mt-2 mt-sm-5">
                                             @csrf
                                             <div class="row">
                                                 <div class="col-12">
@@ -84,7 +84,7 @@
                                                     <button type="submit" class="btn btn-primary text-uppercase">{{_('sign up')}}</button>
                                                 </div>
                                                 <div class="col-12  mt-3">
-                                                    <p>{{_('Already have an account ?')}}<a href="{{route('admin.dashboard.login')}}"> {{_("Sign In")}}</a></p>
+                                                    <p>{{_('Already have an account ?')}}<a href="{{route('admin.login')}}"> {{_("Sign In")}}</a></p>
                                                 </div>
                                             </div>
                                         </form>

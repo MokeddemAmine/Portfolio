@@ -16,7 +16,7 @@
                                         @if (session('successMessage'))
                                             <strong class="text-success mb-3">{{session('successMessage')}}</strong>
                                         @endif
-                                        <form action="{{route('admin.dashboard.reset.password')}}" method="POST" class="mt-3 mt-sm-5">
+                                        <form action="{{route('admin.reset.password')}}" method="POST" class="mt-3 mt-sm-5">
                                             @csrf
                                             <div class="row">
                                                 <div class="col-12">
@@ -31,7 +31,7 @@
                                                     @if(session('errorMessage'))
                                                         <strong class="text-danger my-3" >{{session('errorMessage')}}</strong>
                                                     @endif
-                                                <div class="ml-auto"><a href="{{route('admin.dashboard.login')}}">{{_('back to login')}}</a></div>
+                                                <div class="ml-auto"><a href="{{route('admin.login')}}">{{_('back to login')}}</a></div>
                                                 
                                                 <div class="col-12 mt-3">
                                                     <button type="submit" class="btn btn-primary text-uppercase">{{_('Send')}}</button>

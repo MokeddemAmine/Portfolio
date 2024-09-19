@@ -13,7 +13,7 @@ class AdminMainProjectController extends Controller
 {
     public function create(){
         $portfolios = Portfolio::all();
-        return view('admin.main.portfolio.project.create',compact('portfolios'));
+        return view('admin.portfolio.project.create',compact('portfolios'));
     }
     public function store(Request $request){
 
@@ -63,11 +63,11 @@ class AdminMainProjectController extends Controller
       return redirect()->back()->with('errorMessage', 'Something went wrong');
     }
     public function show(Project $project){
-        return view('admin.main.portfolio.project.show',compact('project'));
+        return view('admin.portfolio.project.show',compact('project'));
     }
     public function edit(Project $project){
         $portfolios = Portfolio::all();
-        return view('admin.main.portfolio.project.edit',compact('portfolios','project'));
+        return view('admin.portfolio.project.edit',compact('portfolios','project'));
     }
     public function update(Request $request,Project $project){
         

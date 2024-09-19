@@ -16,7 +16,7 @@
                                         @if (session('successMessage'))
                                             <strong class="text-success mb-3">{{session('successMessage')}}</strong>
                                         @endif
-                                        <form action="{{route('admin.dashboard.logins.store')}}" method="post" class="mt-3 mt-sm-5">
+                                        <form action="{{route('admin.logins.store')}}" method="post" class="mt-3 mt-sm-5">
                                             @csrf
                                             <div class="row">
                                                 <div class="col-12">
@@ -42,7 +42,7 @@
                                                                 {{_('remember me')}}
                                                             </label>
                                                         </div>
-                                                        <a href="{{route('admin.dashboard.forgot_password')}}" class="ml-auto text-capitalize">{{_('forgot password ?')}}</a>
+                                                        <a href="{{route('admin.forgot_password')}}" class="ml-auto text-capitalize">{{_('forgot password ?')}}</a>
                                                     </div>
                                                     @if(session('errorMessage'))
                                                         <strong class="text-danger my-3">{{session('errorMessage')}}</strong>
@@ -52,7 +52,7 @@
                                                     <button type="submit" class="btn btn-primary text-uppercase">{{_('sign in')}}</button>
                                                 </div>
                                                 <div class="col-12  mt-3">
-                                                    <p>{{_("Don't have an account ?")}}<a href="{{route('admin.dashboard.register')}}" class="text-capitalize"> {{_('sign up')}}</a></p>
+                                                    <p>{{_("Don't have an account ?")}}<a href="{{route('admin.register')}}" class="text-capitalize"> {{_('sign up')}}</a></p>
                                                 </div>
                                             </div>
                                         </form>

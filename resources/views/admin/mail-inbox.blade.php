@@ -50,9 +50,7 @@
                                                                                     <p class="d-none d-xl-block">
                                                                                         @if ($msg->created_at->format('Y/m') == date('Y/m') && ((date('d') - $msg->created_at->format('d')) == 1) )
                                                                                             Yesterday
-                                                                                        @elseif ($msg->created_at->format('Y') == date('Y') && $msg->created_at->format('Y/m/d') != date('Y/m/d') )
-                                                                                            {{$msg->created_at->format('M/d')}}
-                                                                                        @else
+                                                                                        @elseif($msg->created_at->format('Y/m') == date('Y/m') && ((date('d') - $msg->created_at->format('d')) > 1))
                                                                                             {{$msg->created_at->format('Y/m/d')}}
                                                                                         @endif 
                                                                                         {{$msg->created_at->format('H:m')}}

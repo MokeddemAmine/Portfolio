@@ -13,7 +13,7 @@
                             <!-- begin page title -->
                             <div class="d-block d-lg-flex flex-nowrap align-items-center">
                                 <div class="page-title mr-4 pr-4 border-right">
-                                    <h1>Main / <a href="{{route('admin.dashboard.main.portfolio.index')}}">Portfolio</a> / <span class="text-secondary text-capitalize">{{$portfolio->section}} (edit)</span></h1>
+                                    <h1>Main / <a href="{{route('admin.dashboard.portfolio.index')}}">Portfolio</a> / <span class="text-secondary text-capitalize">{{$portfolio->section}} (edit)</span></h1>
                                 </div>
                                 
                             </div>
@@ -26,7 +26,7 @@
                             @endif
                             <div class="page-content my-4">
                                 <div class="container">
-                                    <form action="{{route('admin.dashboard.main.portfolio.update',$portfolio->id)}}" style="max-width: 800px" method="POST">
+                                    <form action="{{route('admin.dashboard.portfolio.update',$portfolio->id)}}" style="max-width: 800px" method="POST">
                                         @csrf
                                         @method('PUT')
                                         <div class="form-group row align-items-center center mb-3">
