@@ -10,7 +10,7 @@ use Illuminate\Http\Request;
 class AdminMainResumeContentController extends Controller
 {
     public function create(Resume $resume){
-        return view('admin.page.main.resume.content.create',compact('resume'));
+        return view('admin.main.resume.content.create',compact('resume'));
     }
     public function store(Request $request,Resume $resume){
         
@@ -32,7 +32,7 @@ class AdminMainResumeContentController extends Controller
 
     public function edit(Resume $resume,ContentResume $content){
 
-        return view('admin.page.main.resume.content.edit',compact('content','resume'));
+        return view('admin.main.resume.content.edit',compact('content','resume'));
     }
 
     public function update(Request $request,Resume $resume, ContentResume $content){

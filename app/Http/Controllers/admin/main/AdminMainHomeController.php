@@ -13,11 +13,11 @@ class AdminMainHomeController extends Controller
     public function index(){
         $home = Home::where('section','home')->first();
         
-        return view('admin.page.main.home.index',compact('home'));
+        return view('admin.main.home.index',compact('home'));
     }
     public function edit(){
         $home = Home::where('section','home')->first();
-        return view('admin.page.main.home.edit',compact('home'));
+        return view('admin.main.home.edit',compact('home'));
     }
 
     public function store(Request $request){

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Home;
+use App\Models\Message;
 use App\Models\Portfolio;
 use App\Models\project;
 use App\Models\Resume;
@@ -45,5 +46,28 @@ class HomeController extends Controller
     public function project(project $project){
 
         return view('project',compact('project'));
+    }
+
+    public function message(Request $request){
+        // valide that all fields are setting
+        $request->validate([
+            'first_name'        => ['required','string'],
+            'last_name'         => ['required','string'],
+            'email'             => ['required','email'],
+            'subject'           => ['required','string'],
+            'message'           => ['required','string'],
+        ]);
+
+        // save the message into DB
+        Message::create([
+            'first_name'        => $request->first_name,
+            'last_name'         => $request->last_name,
+            'email'             => $request->email,
+            'subject'           => $request->subject,
+            'message'           => $request->message,
+        ]);
+
+        // redirect to back page with a success Message
+        return redirect()->back()->with('successMessage','Your message was sended . Thank you so much '.$request->first_name);
     }
 }

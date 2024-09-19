@@ -19,20 +19,13 @@ Route::prefix('/admin/dashboard')->name('admin.dashboard.')->group(function(){
     Route::controller(AdminHomeController::class)->group(function(){
         Route::middleware(['is_admin','is_verify_email'])->group(function(){
             Route::get('/','index')->name('index');
-            Route::get('/app-chat','app_chat')->name('app_chat');
             Route::get('/mail-inbox','mail_inbox')->name('mail_inbox');
-            Route::get('/404','page_404')->name('page_404');
-            Route::get('/500','page_500')->name('page_500');
+            Route::post('/get_message','get_message')->name('get_message');
+            Route::get('/messages_in_time','messages_in_time')->name('messages_in_time');
+            Route::get('/read_message/{message}','read_message')->name('read_message');
+            Route::get('/read_all_messages','read_all_messages')->name('read_all_messages');
             Route::get('/account-settings','account_settings')->name('account_settings');
-            Route::get('/clients','clients')->name('clients');
-            Route::get('/coming-soon','coming_soon')->name('coming_soon');
-            Route::get('/contacts','contacts')->name('contacts');
-            Route::get('/employees','employees')->name('employees');
-            Route::get('/faq','faq')->name('faq');
-            Route::get('/file-manager','file_manager')->name('file_manager');
-            Route::get('/gallery','gellery')->name('gallery');
             Route::get('/pricing','pricing')->name('pricing');
-            Route::get('/task-list','task_list')->name('task_list');
         });
         
     });

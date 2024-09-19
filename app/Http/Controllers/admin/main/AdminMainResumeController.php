@@ -10,10 +10,10 @@ class AdminMainResumeController extends Controller
 {
     public function index(){
         $resume = Resume::all();
-        return view('admin.page.main.resume.index',compact('resume'));
+        return view('admin.main.resume.index',compact('resume'));
     }
     public function create(){
-        return view('admin.page.main.resume.create');
+        return view('admin.main.resume.create');
     }
     public function store(Request $request){
         $request->validate([
@@ -34,10 +34,10 @@ class AdminMainResumeController extends Controller
     }
     public function show(Resume $resume){
         
-        return view('admin.page.main.resume.show',compact('resume'));
+        return view('admin.main.resume.show',compact('resume'));
     }
     public function edit(Resume $resume){
-        return view('admin.page.main.resume.edit',compact('resume'));
+        return view('admin.main.resume.edit',compact('resume'));
     }
     public function update(Request $request,Resume $resume){
         $request->validate([

@@ -14,11 +14,11 @@ class AdminMainPortfolioController extends Controller
     public function index(){
         $portfolios = Portfolio::all();
         $projects = project::all();
-        return view('admin.page.main.portfolio.index',compact('portfolios','projects'));
+        return view('admin.main.portfolio.index',compact('portfolios','projects'));
     }
 
     public function create(){
-        return view('admin.page.main.portfolio.create');
+        return view('admin.main.portfolio.create');
     }
     public function store(Request $request){
         $request->validate([
@@ -34,7 +34,7 @@ class AdminMainPortfolioController extends Controller
 
     }
     public function edit(Portfolio $portfolio){
-        return view('admin.page.main.portfolio.edit',compact('portfolio'));
+        return view('admin.main.portfolio.edit',compact('portfolio'));
     }
     public function update(Request $request,Portfolio $portfolio){
         $request->validate([

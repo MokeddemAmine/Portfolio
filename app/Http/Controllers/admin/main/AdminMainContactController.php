@@ -12,11 +12,11 @@ class AdminMainContactController extends Controller
     public function index(){
         $contact = Home::where('section','contact')->first();
         
-        return view('admin.page.main.contact.index',compact('contact'));
+        return view('admin.main.contact.index',compact('contact'));
     }
     public function edit(){
         $contact = Home::where('section','contact')->first();
-        return view('admin.page.main.contact.edit',compact('contact'));
+        return view('admin.main.contact.edit',compact('contact'));
     }
 
     public function store(Request $request){

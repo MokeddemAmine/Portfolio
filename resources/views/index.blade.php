@@ -226,43 +226,7 @@
     </div>
     <!-- end portfolio -->
 
-    <!-- blog -->
-    <div id="blog" class="blog segments">
-        <div class="container">
-            <div class="section-title">
-                <h3>My Blog</h3>
-            </div>
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="content">
-                        <div class="image">
-                            <img src="{{asset('assets/images/blog1.jpg')}}" alt="">
-                        </div>
-                        <div class="blog-title">
-                            <h4><a href="#">Graphic Design and Photography Workshop This Year</a></h4>
-                            <div class="date">
-                                August 23, 2019 <i class="fas fa-circle"></i> <a href="#"><span>GRAPHIC</span></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="content no-mb">
-                        <div class="image">
-                            <img src="{{asset('assets/images/blog2.jpg')}}" alt="">
-                        </div>
-                        <div class="blog-title">
-                            <h4><a href="#">Creeping Plants for Minimalist Home Decorations</a></h4>
-                            <div class="date">
-                                August 23, 2019 <i class="fas fa-circle"></i> <a href="#"><span>NATURE</span></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- end blog -->
+    
 
     <!-- contact -->
     <div id="contact" class="contact segments">
@@ -331,39 +295,58 @@
                     </div>
                     <div class="col-md-6 col-sm-12 col-xs-12">
                         <div class="content-right">
-                            <form action="#" class="contact-form" id="contact-form" method="post">
+                            @if (session('successMessage'))
+                                <strong class="text-success">{{session('successMessage')}}</strong>
+                            @endif
+                            <form action="{{route('message')}}" class="contact-form" method="post">
+                                @csrf
                                 <div class="row">
                                     <div class="col">
                                         <div id="first-name-field">
-                                            <input type="text" placeholder="First Name" class="form-control" name="form-name">
+                                            <input type="text" placeholder="First Name" value="{{old('first_name')}}" class="form-control @error('first_name') is-invalid @enderror" name="first_name">
                                         </div>
+                                        @if($errors->has('first_name'))
+                                            <strong class="text-danger mb-3">{{ $errors->first('first_name') }}</strong>
+                                        @endif
                                     </div>
                                     <div class="col">
                                         <div id="last-name-field">
-                                            <input type="text" placeholder="Last Name" class="form-control" name="form-name">
+                                            <input type="text" placeholder="Last Name" value="{{old('last_name')}}" class="form-control @error('last_name') is-invalid @enderror" name="last_name">
                                         </div>
+                                        @if($errors->has('last_name'))
+                                            <strong class="text-danger mb-3">{{ $errors->first('last_name') }}</strong>
+                                        @endif
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col">
                                         <div id="email-field">
-                                            <input type="email" placeholder="Email Address" class="form-control" name="form-email">
+                                            <input type="email" placeholder="Email Address" value="{{old('email')}}" class="form-control @error('email') is-invalid @enderror" name="email">
                                         </div>
+                                        @if($errors->has('email'))
+                                            <strong class="text-danger mb-3">{{ $errors->first('email') }}</strong>
+                                        @endif
                                     </div>
                                     <div class="col">
                                         <div id="subject-field">
-                                            <input type="text" placeholder="Subject" class="form-control" name="form-subject">
+                                            <input type="text" placeholder="Subject" value="{{old('subject')}}" class="form-control @error('subject') is-invalid @enderror" name="subject">
                                         </div>
+                                        @if($errors->has('subject'))
+                                            <strong class="text-danger mb-3">{{ $errors->first('subject') }}</strong>
+                                        @endif
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col">
                                         <div id="message-field">
-                                            <textarea cols="30" rows="5" class="form-control" id="form-message" name="form-message" placeholder="Message"></textarea>
+                                            <textarea cols="30" rows="5" class="form-control @error('message') is-invalid @enderror" id="form-message" name="message" placeholder="Message">{{old('message')}}</textarea>
                                         </div>
+                                            @if($errors->has('message'))
+                                            <strong class="text-danger mb-3">{{ $errors->first('message') }}</strong>
+                                        @endif
                                     </div>
                                 </div>
-                                <button class="button" type="submit" id="submit" name="submit">Send Message</button>
+                                <button class="button" type="submit" id="submit">Send Message</button>
                             </form>
                         </div>
                     </div>

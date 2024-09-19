@@ -13,11 +13,11 @@ class AdminMainAboutController extends Controller
     public function index(){
         $about = Home::where('section','about')->first();
         
-        return view('admin.page.main.about.index',compact('about'));
+        return view('admin.main.about.index',compact('about'));
     }
     public function edit(){
         $about = Home::where('section','about')->first();
-        return view('admin.page.main.about.edit',compact('about'));
+        return view('admin.main.about.edit',compact('about'));
     }
 
     public function store(Request $request){

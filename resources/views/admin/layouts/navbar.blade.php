@@ -40,28 +40,7 @@
                                             <a href="{{route('admin.dashboard.account_settings')}}">{{_('Account Settings')}}</a>
                                         </li>
                                         <li class="nav-link">
-                                            <a href="{{route('admin.dashboard.clients')}}">{{_('Clients')}}</a>
-                                        </li>
-                                        <li class="nav-link">
-                                            <a href="{{route('admin.dashboard.contacts')}}">{{_('Contacts')}}</a>
-                                        </li>
-                                        <li class="nav-link">
-                                            <a href="{{route('admin.dashboard.gallery')}}">{{_('Gallery')}}</a>
-                                        </li>
-                                        <li class="nav-link">
                                             <a href="{{route('admin.dashboard.pricing')}}">{{_('Pricing')}}</a>
-                                        </li>
-                                        <li class="nav-link">
-                                            <a href="{{route('admin.dashboard.task_list')}}">{{_('Task List')}}</a>
-                                        </li>
-                                        <li class="nav-link">
-                                            <a href="{{route('admin.dashboard.page_404')}}">404</a>
-                                        </li>
-                                        <li class="nav-link">
-                                            <a href="{{route('admin.dashboard.page_500')}}">500</a>
-                                        </li>
-                                        <li class="nav-link">
-                                            <a href="{{route('admin.dashboard.coming_soon')}}">{{_('Coming Soon')}}</a>
                                         </li>
                                     </ul>
                                 </div>
@@ -124,194 +103,17 @@
                         <div class="dropdown-menu extended animated fadeIn" aria-labelledby="navbarDropdown">
                             <ul>
                                 <li class="dropdown-header bg-gradient p-4 text-white text-left">{{_('Messages')}}
-                                    <label class="label label-info label-round">6</label>
-                                    <a href="#" class="float-right btn btn-square btn-inverse-light btn-xs m-0">
+                                    <label class="label label-info label-round" id="msg_count"></label>
+                                    <a href="#" class="float-right btn btn-square btn-inverse-light btn-xs m-0" id="read-all-messages">
                                         <span class="font-13"> {{_('Mark all as read')}}</span></a>
                                 </li>
                                 <li class="dropdown-body">
-                                    <ul class="scrollbar scroll_dark max-h-240">
-                                        <li>
-                                            <a href="javascript:void(0)">
-                                                <div class="notification d-flex flex-row align-items-center">
-                                                    <div class="notify-icon bg-img align-self-center">
-                                                        <img class="img-fluid" src="{{asset('admin/assets/img/avtar/03.jpg')}}" alt="user3">
-                                                    </div>
-                                                    <div class="notify-message">
-                                                        <p class="font-weight-bold">Brianing Leyon</p>
-                                                        <small>{{_('You will sail along until you...')}}</small>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="javascript:void(0)">
-                                                <div class="notification d-flex flex-row align-items-center">
-                                                    <div class="notify-icon bg-img align-self-center">
-                                                        <img class="img-fluid" src="{{asset('admin/assets/img/avtar/01.jpg')}}" alt="user">
-                                                    </div>
-                                                    <div class="notify-message">
-                                                        <p class="font-weight-bold">Jimmyimg Leyon</p>
-                                                        <small>Okay</small>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="javascript:void(0)">
-                                                <div class="notification d-flex flex-row align-items-center">
-                                                    <div class="notify-icon bg-img align-self-center">
-                                                        <img class="img-fluid" src="{{asset('admin/assets/img/avtar/02.jpg')}}" alt="user2">
-                                                    </div>
-                                                    <div class="notify-message">
-                                                        <p class="font-weight-bold">Brainjon Leyon</p>
-                                                        <small>So, make the decision...</small>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="javascript:void(0)">
-                                                <div class="notification d-flex flex-row align-items-center">
-                                                    <div class="notify-icon bg-img align-self-center">
-                                                        <img class="img-fluid" src="{{asset('admin/assets/img/avtar/04.jpg')}}" alt="user4">
-                                                    </div>
-                                                    <div class="notify-message">
-                                                        <p class="font-weight-bold">Smithmin Leyon</p>
-                                                        <small>Thanks</small>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="javascript:void(0)">
-                                                <div class="notification d-flex flex-row align-items-center">
-                                                    <div class="notify-icon bg-img align-self-center">
-                                                        <img class="img-fluid" src="{{asset('admin/assets/img/avtar/05.jpg')}}" alt="user5">
-                                                    </div>
-                                                    <div class="notify-message">
-                                                        <p class="font-weight-bold">Jennyns Leyon</p>
-                                                        <small>How are you</small>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="javascript:void(0)">
-                                                <div class="notification d-flex flex-row align-items-center">
-                                                    <div class="notify-icon bg-img align-self-center">
-                                                        <img class="img-fluid" src="{{asset('admin/assets/img/avtar/06.jpg')}}" alt="user6">
-                                                    </div>
-                                                    <div class="notify-message">
-                                                        <p class="font-weight-bold">Demian Leyon</p>
-                                                        <small>I like your themes</small>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                        </li>
+                                    <ul class="scrollbar scroll_dark max-h-240" id="messages">
+                                        
                                     </ul>
                                 </li>
                                 <li class="dropdown-footer">
-                                    <a class="font-13" href="{{route('admin.dashboard.app_chat')}}">{{_(' View All messages')}} </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="javascript:void(0)" id="navbarDropdown3" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <i class="fe fe-bell"></i>
-                            <span class="notify">
-                                        <span class="blink"></span>
-                            <span class="dot"></span>
-                            </span>
-                        </a>
-                        <div class="dropdown-menu extended animated fadeIn" aria-labelledby="navbarDropdown">
-                            <ul>
-                                <li class="dropdown-header bg-gradient p-4 text-white text-left">{{_('Notifications')}}
-                                    <a href="#" class="float-right btn btn-square btn-inverse-light btn-xs m-0">
-                                        <span class="font-13"> {{_('Clear all')}}</span></a>
-                                </li>
-                                <li class="dropdown-body min-h-240 nicescroll">
-                                    <ul class="scrollbar scroll_dark max-h-240">
-                                        <li>
-                                            <a href="javascript:void(0)">
-                                                <div class="notification d-flex flex-row align-items-center">
-                                                    <div class="notify-icon bg-img align-self-center">
-                                                        <div class="bg-type bg-type-md">
-                                                            <span>HY</span>
-                                                        </div>
-                                                    </div>
-                                                    <div class="notify-message">
-                                                        <p class="font-weight-bold">{{_('New registered user')}}</p>
-                                                        <small>Just now</small>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="javascript:void(0)">
-                                                <div class="notification d-flex flex-row align-items-center">
-                                                    <div class="notify-icon bg-img align-self-center">
-                                                        <div class="bg-type bg-type-md bg-success">
-                                                            <span>GM</span>
-                                                        </div>
-                                                    </div>
-                                                    <div class="notify-message">
-                                                        <p class="font-weight-bold">New invoice received</p>
-                                                        <small>22 min</small>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="javascript:void(0)">
-                                                <div class="notification d-flex flex-row align-items-center">
-                                                    <div class="notify-icon bg-img align-self-center">
-                                                        <div class="bg-type bg-type-md bg-danger">
-                                                            <span>FR</span>
-                                                        </div>
-                                                    </div>
-                                                    <div class="notify-message">
-                                                        <p class="font-weight-bold">Server error report</p>
-                                                        <small>7 min</small>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="javascript:void(0)">
-                                                <div class="notification d-flex flex-row align-items-center">
-                                                    <div class="notify-icon bg-img align-self-center">
-                                                        <div class="bg-type bg-type-md bg-info">
-                                                            <span>HT</span>
-                                                        </div>
-                                                    </div>
-                                                    <div class="notify-message">
-                                                        <p class="font-weight-bold">Database report</p>
-                                                        <small>1 day</small>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="javascript:void(0)">
-                                                <div class="notification d-flex flex-row align-items-center">
-                                                    <div class="notify-icon bg-img align-self-center">
-                                                        <div class="bg-type bg-type-md">
-                                                            <span>DE</span>
-                                                        </div>
-                                                    </div>
-                                                    <div class="notify-message">
-                                                        <p class="font-weight-bold">Order confirmation</p>
-                                                        <small>2 day</small>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li class="dropdown-footer">
-                                    <a class="font-13" href="javascript:void(0)"> {{_('View All Notifications')}}
-                                    </a>
+                                    <a class="font-13" href="{{route('admin.dashboard.mail_inbox')}}">{{_(' View All messages')}} </a>
                                 </li>
                             </ul>
                         </div>
@@ -369,7 +171,7 @@
                                 @if (Auth::guard('admin')->user()->email_verified_at)
                                 <div class="row mt-2">
                                     <div class="col">
-                                        <a class="bg-light p-3 text-center d-block" href="{{route('admin.dashboard.app_chat')}}">
+                                        <a class="bg-light p-3 text-center d-block" href="{{route('admin.dashboard.mail_inbox')}}">
                                             <i class="fe fe-mail font-20 text-primary"></i>
                                             <span class="d-block font-13 mt-2">{{_('My messages')}}</span>
                                         </a>
@@ -393,3 +195,59 @@
     </nav>
     <!-- end navbar -->
 </header>
+<script>
+    $(document).ready(function(){
+        get_new_messages();
+        setInterval(() => {
+            get_new_messages();
+        }, 5000);
+        function get_new_messages(){
+            $.ajax({
+                method:'GET',  
+                url:'{{route('admin.dashboard.messages_in_time')}}',
+                success:function(data){
+                    console.log(data);
+                    $('#msg_count').text(data.messages.length);
+                    $('ul#messages').html('');
+                    data.messages.map(function(msg){
+                        let message = msg.message.substring(0, 40);
+                        let id = msg.id;
+                        if(message.length < msg.message.length){
+                            message += '...';
+                        }
+                        $('ul#messages').append(`
+                            <li>
+                                <a href="/admin/dashboard/read_message/${id}">
+                                    <div class="notification d-flex flex-row align-items-center">
+                                        <div class="notify-message ml-3">
+                                            <p class="font-weight-bold">${msg.first_name}</p>
+                                            <small>${message}</small>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                        `);
+                    })
+                },
+                error:function(xhr,status,err){
+                    console.log(err);
+                }
+            });
+        }
+        // messages: mark all as read
+        $('#read-all-messages').click(function(){
+            $.ajax({
+                method:'GET',
+                url:'{{route('admin.dashboard.read_all_messages')}}',
+                success:function(data){
+                    if(data.status){
+                        $('ul#messages').html();
+                    }
+                },
+                error:function(xhr,status,err){
+                    console.log(err);
+                }
+            });
+        })
+    })
+</script>
