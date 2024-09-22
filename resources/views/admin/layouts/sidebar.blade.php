@@ -21,7 +21,14 @@
                     </ul>
                 </li>
                 <li><a href="{{route('admin.dashboard.portfolio.index')}}" class="text-capitalize"><i class="nav-icon ti ti-gallery"></i>portfolio</a></li>
-                <li><a href="" class="text-capitalize"><i class="nav-icon ti ti-pencil"></i>blog</a></li>
+                <li>
+                    <a href="javascript:void(0" class="text-capitalize has-arrow" aria-expanded="false"><i class="nav-icon ti ti-pencil"></i><span class="nav-title">{{_('Blog')}}</span><span class="nav-label label label-primary">3</span></a>
+                    <ul aria-expanded="false">
+                        <li><a href="{{route('admin.dashboard.blog.index')}}" class="text-capitalize">All</a></li>
+                        <li><a href="{{route('admin.dashboard.blog.create')}}" class="text-capitalize">Create Blog</a></li>
+                        <li><a href="{{route('admin.dashboard.categories.index')}}" class="text-capitalize">Categories</a></li>
+                    </ul>
+                </li>
                 <li><a href="{{route('admin.dashboard.mail_inbox')}}" aria-expanded="false"><i class="nav-icon ti ti-email"></i><span class="nav-title">{{_('Mail')}}</span></a> </li>
                 <li> <a href="{{route('admin.dashboard.pricing')}}"><i class="nav-icon ti ti-money"></i>{{_('Pricing')}}</a> </li>
                 <li> <a href="{{route('admin.dashboard.account_settings')}}"><i class="nav-icon ti ti-settings"></i>{{_('Account Settings')}}</a> </li>

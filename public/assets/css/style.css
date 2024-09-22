@@ -397,7 +397,7 @@ ul {
     height: 10px;
     background: #525252;
 }
-.portfolio .portfolio-filter-menu ul li.active {
+.portfolio .portfolio-filter-menu ul li.active a {
     color: #ff8c05;
 }
 .portfolio .content-image {

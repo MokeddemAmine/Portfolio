@@ -226,6 +226,44 @@
     </div>
     <!-- end portfolio -->
 
+   
+    @if ($blogs && count($blogs))
+        <!-- blog -->
+        <div id="blog" class="blog segments">
+            <div class="container">
+                <div class="section-title">
+                    <h3>My Blog</h3>
+                </div>
+                <div class="row">
+                    @foreach ($blogs as $blog)
+                        <div class="col-md-6">
+                            <div class="content">
+                                <div class="image">
+                                    <img src="{{asset('storage/'.$blog->picture)}}" height="414" alt="picture of {{$blog->title}}" />
+                                </div>
+                                <div class="blog-title">
+                                    <h4><a href="#" class="text-capitalize">{{$blog->title}}</a></h4>
+                                    <div class="date">
+                                        {{$blog->updated_at->format('Y/m/d')}} 
+                                        @if ($blog->categories && count($blog->categories))
+                                            @foreach ($blog->categories as $category)
+                                                <i class="fas fa-circle"></i> <a href="#"><span class="text-uppercase">{{$category->name}}</span></a>
+                                            @endforeach
+                                        @endif
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    @endforeach
+                </div>
+                <div class="my-3 text-center">
+                    <a href="{{route('blogs.show','all')}}" class="text-primary text-uppercase">show all blogs <i class="fas fa-chevron-right"></i></a>
+                </div>
+            </div>
+        </div>
+        <!-- end blog -->
+    @endif
     
 
     <!-- contact -->

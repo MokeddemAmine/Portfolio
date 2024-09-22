@@ -4,28 +4,27 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Cviebrock\EloquentSluggable\Sluggable;
 
-class project extends Model
+class Blog extends Model
 {
-    use HasFactory;
+    use HasFactory,sluggable;
     protected $fillable = [
+        'picture',
         'title',
-        'sub_title',
-        'description',
-        'link',
-        'pictures',
+        'content',
         'main_page',
     ];
-
-    public function section(){
-        return $this->belongsToMany(Portfolio::class,'project_portfolios','project_id','portfolio_id');
-    }
 
     public function sluggable():array{
         return [
             'slug'  => [
-                'source'    => 'name',
+                'source'    => 'title',
             ]
         ];
+    }
+
+    public function categories(){
+        return $this->belongsToMany(BlogCategory::class,'blog_relatings');
     }
 }

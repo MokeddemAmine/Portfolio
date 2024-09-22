@@ -11,14 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('messages', function (Blueprint $table) {
+        Schema::create('blog_relatings', function (Blueprint $table) {
             $table->id();
-            $table->string('first_name');
-            $table->string('last_name');
-            $table->string('email');
-            $table->string('subject');
-            $table->text('message');
-            $table->integer('read')->default(0);
+            $table->unsignedBigInteger('blog_id');
+            $table->unsignedBigInteger('blog_category_id');
+            $table->foreign('blog_id')->references('id')->on('blogs')->onDelete('cascade');
+            $table->foreign('blog_category_id')->references('id')->on('blog_categories')->onDelete('cascade');
             $table->timestamps();
             $table->engine = 'InnoDB';
         });
@@ -29,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('messages');
+        Schema::dropIfExists('blog_relatings');
     }
 };

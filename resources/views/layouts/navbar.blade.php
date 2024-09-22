@@ -53,10 +53,13 @@
             <div id="navbarTogglerDemo" class="collapse navbar-collapse">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item active">
-                        <a href="{{route('home')}}" class="nav-link">Home</a>
+                        <a href="{{route('home')}}" class="nav-link text-uppercase" >Home</a>
                     </li>
                     <li class="nav-item">
-                        <a href="{{route('portfolio')}}" class="nav-link">Portfolio</a>
+                        <a href="{{route('portfolio')}}" class="nav-link text-uppercase" data-link="portfolio">Portfolio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{route('blogs.show','all')}}" class="nav-link text-uppercase" data-link="blog">blogs</a>
                     </li>
                 </ul>
             </div>

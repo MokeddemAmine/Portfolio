@@ -5,7 +5,7 @@ $(document).ready(function(){
     })
 
     $('.btn-delete').click(function(){
-        let confirmation = confirm('you sure want to delete this resume');
+        let confirmation = confirm('you sure want to delete this');
         if(confirmation){
             $(this).siblings('.form-delete').submit();
         }

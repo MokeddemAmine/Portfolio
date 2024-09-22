@@ -11,14 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('messages', function (Blueprint $table) {
+        Schema::create('blogs', function (Blueprint $table) {
             $table->id();
-            $table->string('first_name');
-            $table->string('last_name');
-            $table->string('email');
-            $table->string('subject');
-            $table->text('message');
-            $table->integer('read')->default(0);
+            $table->text('picture');
+            $table->string('title');
+            $table->text('content');
             $table->timestamps();
             $table->engine = 'InnoDB';
         });
@@ -29,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('messages');
+        Schema::dropIfExists('blogs');
     }
 };

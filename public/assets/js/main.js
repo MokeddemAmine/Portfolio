@@ -82,5 +82,11 @@ $(function() {
 
     });
 
+    $('#navbarTogglerDemo .nav-link').each(function(index,ele){
+        if(window.location.href.includes($(this).data('link'))){
+            ele.style.color= '#ff8c05';
+        }
+    })
+
 
 });
