@@ -4,6 +4,7 @@ use App\Http\Middleware\AuthAdmin;
 use App\Http\Middleware\email_verified;
 use App\Http\Middleware\IfAuthAdmin;
 use App\Http\Middleware\VerifiedAdminEmail;
+use App\Http\Middleware\VisitWebsite;
 use Illuminate\Foundation\Application;
 use Illuminate\Foundation\Configuration\Exceptions;
 use Illuminate\Foundation\Configuration\Middleware;
@@ -20,6 +21,7 @@ return Application::configure(basePath: dirname(__DIR__))
             'is_verify_email'   => VerifiedAdminEmail::class,
             'email_verified'    => email_verified::class,  
             'if_auth_admin'     => IfAuthAdmin::class,  
+            'visit_website'     => VisitWebsite::class,
         ]);
     })
     ->withExceptions(function (Exceptions $exceptions) {

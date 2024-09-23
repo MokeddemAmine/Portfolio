@@ -90,7 +90,7 @@ class HomeController extends Controller
 
         if($category == 'all'){
             $cat->name = 'all';
-            $blogs = Blog::paginate(1);
+            $blogs = Blog::paginate(12);
             
         }else{
             $cat = BlogCategory::where('slug',$category)->first();

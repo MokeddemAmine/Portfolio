@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use App\Models\Blog;
 use App\Models\Home;
 use App\Models\Message;
+use App\Models\project;
+use App\Models\Visit;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -16,7 +18,17 @@ class AdminHomeController extends Controller
         
     }
     public function index(){
-        return view('admin.index');
+        $projects = project::all()->count();
+        $posts = Blog::all()->count();
+        $messages = Message::all()->count();
+        $visits = Visit::all();
+        $views = 0;
+        if($visits && count($visits)){
+            foreach($visits as $visit){
+                $views += $visit->visit_website;
+            }
+        }
+        return view('admin.index',compact('projects','posts','messages','views'));
     }
     public function mail_inbox(){
         $messages = Message::orderBy('created_at','desc')->get();
