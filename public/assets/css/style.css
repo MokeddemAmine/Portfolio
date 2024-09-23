@@ -771,3 +771,17 @@ ul {
         font-size: 32px;
     }
 }
+
+.paginate nav ul.pagination li a , .paginate nav ul.pagination li.disabled span , .paginate nav ul.pagination li.active span.page-link{
+    background-color:#ff8c05;
+    border:none;
+    border-radius:50% !important;
+    margin:0 .5rem;
+    color:white;
+}
+.paginate nav ul.pagination li.disabled span{
+    background-color: #999;
+}
+.paginate nav ul.pagination li.active span.page-link , .paginate nav ul.pagination li a:hover{
+    background-color: #d61a5e;
+}

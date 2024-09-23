@@ -51,6 +51,9 @@
                     @endforeach
                 @endif
             </div>
+            <div class="paginate my-3 d-flex justify-content-center">
+                {{$projects->onEachSide(1)->links()}}
+            </div>
         </div>
     </div>
 </div>

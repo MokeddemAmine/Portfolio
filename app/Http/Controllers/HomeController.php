@@ -73,7 +73,7 @@ class HomeController extends Controller
     }
 
     public function portfolio(){
-        $projects = project::all();
+        $projects = project::paginate(12);
         $portfolio = Portfolio::all();
         return view('portfolio',compact('projects','portfolio'));
     }
@@ -90,12 +90,12 @@ class HomeController extends Controller
 
         if($category == 'all'){
             $cat->name = 'all';
-            $blogs = Blog::all();
+            $blogs = Blog::paginate(1);
             
         }else{
             $cat = BlogCategory::where('slug',$category)->first();
             $blogsCats = BlogRelating::where('blog_category_id',$cat->id)->pluck('blog_id')->toArray();
-            $blogs = Blog::whereIn('id',$blogsCats)->get();
+            $blogs = Blog::whereIn('id',$blogsCats)->paginate(12);
         }
         
         $categories = BlogCategory::all();

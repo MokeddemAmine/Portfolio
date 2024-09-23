@@ -65,7 +65,7 @@
                             @php
                                 
                             @endphp
-                            <div class="col-md-4 col-sm-12 col-xs-12">
+                            <div class="col-md-6 col-xl-4 p-2">
                                 <div class="content-image">
                                     <a href="{{route('blog.show',$blog->slug)}}">
                                         <img src="{{asset('storage/'.$blog->picture)}}" height="414" alt="">
@@ -80,6 +80,15 @@
                             </div>
                         @endforeach
                     @endif
+                </div>
+                
+            </div>
+            <div class="row">
+                <div class="col-md-3"></div>
+                <div class="col-md-9">
+                    <div class="paginate my-3 d-flex justify-content-center">
+                        {{$blogs->onEachSide(1)->links()}}
+                    </div>
                 </div>
             </div>
         </div>
