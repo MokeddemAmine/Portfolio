@@ -36,7 +36,7 @@
                         @endif
                         @if ($blogs && count($blogs))
                             <div style="max-width: 1000px">
-                                <div class="row my-3">
+                                <div class="row my-3 titles" style="display: none">
                                     <label class="col font-weight-bold text-capitalize text-dark">title</label>
                                     <label class="col font-weight-bold text-capitalize text-dark">picture</label>
                                     <label class="col font-weight-bold text-capitalize text-dark">categories</label>
@@ -44,27 +44,45 @@
                                     <label class="col font-weight-bold text-capitalize text-dark">actions</label>
                                 </div>
                                 @foreach ($blogs as $blog)
-                                    <div class="row my-3 align-items-center">
-                                        <h6 class="col text-capitalize">{{$blog->title}}</h6>
-                                        <div class="picture col">
+                                    <div class="row my-3 align-items-center bg-white p-2 p-md-1 rounded">
+                                        <h6 class="col-md text-capitalize">
+                                            <div class="row align-items-center">
+                                                <div class="col-4 col-md-0 show-small font-weight-bold text-capitalize text-dark" style="display: none">title</div>
+                                                <div class="col-8 col-md-12 text-capitalize">{{$blog->title}}</div>
+                                            </div>
+                                            
+                                        </h6>
+                                        <div class="picture col-md text-center my-2 my-md-0">
                                             <img src="{{asset('storage/'.$blog->picture)}}" height="80" alt="image of {{$blog->title}}">
                                         </div>
-                                        <div class="col">
-                                            @if ($blog->categories && count($blog->categories))
-                                                @foreach ($blog->categories as $category)
-                                                    <span class="text-uppercase text-info">{{$category->name}}</span>
-                                                @endforeach
-                                            @else 
-                                                <strong class="text-danger">NONE</strong>
-                                            @endif
-                                        </div>
-                                        <div class="main-page col">
-                                            <div class="custom-control custom-checkbox">
-                                                <input type="checkbox" name="page_name" @if($blog->main_page) checked @endif id="{{$blog->title}}-{{$blog->id}}" value="{{$blog->id}}" class="custom-control-input blog-checked">
-                                                <label for="{{$blog->title}}-{{$blog->id}}" class="custom-control-label m-3"></label>
+                                        <div class="col-md">
+                                            <div class="row align-items-center">
+                                                <div class="col-4 col-md-0 show-small font-weight-bold text-capitalize text-dark" style="display: none">categories</div>
+                                                <div class="col-8 col-md-12 text-capitalize">
+                                                    @if ($blog->categories && count($blog->categories))
+                                                        @foreach ($blog->categories as $category)
+                                                            <span class="btn btn-outline-primary btn-sm mb-1">{{$category->name}}</span>
+                                                        @endforeach
+                                                    @else 
+                                                        <strong class="text-danger">NONE</strong>
+                                                    @endif
+                                                </div>
                                             </div>
+                                           
                                         </div>
-                                        <div class="col actions">
+                                        <div class="main-page col-md">
+                                            <div class="row align-items-center">
+                                                <div class="col-4 col-md-0 show-small font-weight-bold text-capitalize text-dark" style="display: none">main page</div>
+                                                <div class="col-8 col-md-12 text-capitalize">
+                                                    <div class="custom-control custom-checkbox">
+                                                        <input type="checkbox" name="page_name" @if($blog->main_page) checked @endif id="{{$blog->title}}-{{$blog->id}}" value="{{$blog->id}}" class="custom-control-input blog-checked">
+                                                        <label for="{{$blog->title}}-{{$blog->id}}" class="custom-control-label m-3"></label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            
+                                        </div>
+                                        <div class="col-md actions">
                                             <a href="{{route('admin.dashboard.blog.show',$blog->id)}}" class="btn btn-info btn-sm text-capitalize">show</a>
                                             <a href="{{route('admin.dashboard.blog.edit',$blog->id)}}" class="btn btn-success btn-sm text-capitalize my-2">edit</a>
                                             <form action="{{route('admin.dashboard.blog.destroy',$blog->id)}}" method="POST" style="display:none" class="form-delete">
@@ -93,6 +111,7 @@
 @section('special-script')
     <script>
         $(document).ready(function(){
+            // toggle posts into main page
             $('.blog-checked').click(function(){
                 let that = $(this);
                 $.ajax({
@@ -119,6 +138,13 @@
                     }
                 })
             })
+            // show and hide elements depend on width of the screen
+            let window_width = window.innerWidth;
+            if(window_width >= 768){
+                $('.titles').show();
+            }else{
+                $('.show-small').show();
+            }   
         })
     </script>
 @endsection

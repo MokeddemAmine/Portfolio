@@ -32,7 +32,7 @@
                         <!-- end row -->
                         <div class="row">
                             <div class="col-12">
-                                <div class="card card-statistics mail-contant">
+                                <div class="card card-statistics mail-contant rounded">
                                     <div class="card-body p-0">
                                         <div class="row no-gutters">
                                             <div class="col-md-8  col-xxl-4 border-md-t">

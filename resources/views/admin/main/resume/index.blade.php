@@ -27,7 +27,7 @@
                             <div class="page-content my-4">
                                 <div class="container">
                                     @if ($resume)
-                                        <div class="row my-2">
+                                        <div class="row my-2 titles" style="display: none">
                                             <label class="col text-capitalize font-weight-bold text-dark">name</label>
                                             <label class="col text-capitalize font-weight-bold text-dark">title</label>
                                             <label class="col text-capitalize font-weight-bold text-dark">second title</label>
@@ -35,14 +35,38 @@
                                             <label class="col text-capitalize font-weight-bold text-dark">actions</label>
                                         </div>
                                         @foreach ($resume as $item)
-                                            <div class="row my-2">
-                                                <div class="col text-uppercase">{{$item->name}}</div>
-                                                <div class="col text-capitalize">{{$item->title_first_color}}</div>
-                                                <div class="col text-capitalize">{{$item->title_second_color}}</div>
-                                                <div class="col text-capitalize">{{$item->display}}</div>
-                                                <div class="col text-capitalize">
+                                            <div class="row my-2 bg-white bg-md-light rounded p-1">
+                                                <div class="col-md mb-2 mb-md-0 text-uppercase">
+                                                    <div class="row align-items-center">
+                                                        <div class="col-3 col-md-0 show-small" style="display:none"><span class="text-capitalize font-weight-bold text-dark">name</span></div>
+                                                        <div class="col-9 col-md-12">{{$item->name}}</div>
+                                                    </div>
+                                                     
+                                                </div>
+                                                <div class="col-md mb-2 mb-md-0 text-capitalize">
+                                                    <div class="row align-items-center">
+                                                        <div class="col-3 col-md-0 show-small" style="display:none"><span class="text-capitalize font-weight-bold text-dark">title</span></div>
+                                                        <div class="col-9 col-md-12">{{$item->title_first_color}}</div>
+                                                    </div>
+                                                    
+                                                </div>
+                                                <div class="col-md mb-2 mb-md-0 text-capitalize">
+                                                    <div class="row align-items-center">
+                                                        <div class="col-3 col-md-0 show-small" style="display:none"><span class="text-capitalize font-weight-bold text-dark">2<sup>nd</sup> title</span></div>
+                                                        <div class="col-9 col-md-12">{{$item->title_second_color}}</div>
+                                                    </div>
+                                                    
+                                                </div>
+                                                <div class="col-md mb-2 mb-md-0 text-capitalize">
+                                                    <div class="row align-items-center">
+                                                        <div class="col-3 col-md-0 show-small" style="display:none"><span class="text-capitalize font-weight-bold text-dark">display</span></div>
+                                                        <div class="col-9 col-md-12">{{$item->display}}</div>
+                                                    </div>
+                                                    
+                                                </div>
+                                                <div class="col-md mb-2 mb-md-0 text-capitalize">
                                                     <a href="{{route('admin.dashboard.main.resume.show',$item->id)}}" class="btn btn-info btn-sm text-capitalize">show</a>
-                                                    <a href="{{route('admin.dashboard.main.resume.edit',$item->id)}}" class="btn btn-success btn-sm text-capitalize my-2 my-md-0">edit</a>
+                                                    <a href="{{route('admin.dashboard.main.resume.edit',$item->id)}}" class="btn btn-success btn-sm text-capitalize d-inline-block my-2">edit</a>
                                                     <form action="{{route('admin.dashboard.main.resume.destroy',$item->id)}}" method="POST" class="d-none form-delete">
                                                         @csrf
                                                         @method('DELETE')
@@ -66,5 +90,17 @@
                 <!-- end container-fluid -->
             </div>
             <!-- end app-main -->
+@endsection
+@section('special-script')
+    <script>
+        $(document).ready(function(){
+            let window_width = window.innerWidth;
+            if(window_width >= 768){
+                $('.titles').show();
+            }else{
+                $('.show-small').show();
+            }
+        })
+    </script>
 @endsection
             

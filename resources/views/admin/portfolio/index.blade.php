@@ -33,10 +33,9 @@
                                                 <label class="col text-capitalize font-weight-bold text-dark">actions</label>
                                             </div>
                                             @foreach ($portfolios as $item)
-                                                <div class="row my-2">
+                                                <div class="row my-2 align-items-center">
                                                     <div class="col text-uppercase">{{$item->section}}</div>
                                                     <div class="col text-capitalize">
-                                                        <a href="{{route('admin.dashboard.portfolio.show',$item->id)}}" class="btn btn-info btn-sm text-capitalize">show</a>
                                                         <a href="{{route('admin.dashboard.portfolio.edit',$item->id)}}" class="btn btn-success btn-sm text-capitalize my-2 my-md-0">edit</a>
                                                         <form action="{{route('admin.dashboard.portfolio.destroy',$item->id)}}" method="POST" class="d-none form-delete">
                                                             @csrf
@@ -78,7 +77,7 @@
                                 <div class="container">
                                     @if ($projects && count($projects))
                                        
-                                            <div class="row my-2">
+                                            <div class="row my-2 titles" style="display: none">
                                                 <label class="col-2 text-capitalize font-weight-bold text-dark">title</label>
                                                 <label class="col-1 text-capitalize font-weight-bold text-dark">sub title</label>
                                                 <label class="col-2 text-capitalize font-weight-bold text-dark">description</label>
@@ -89,11 +88,27 @@
                                             </div>
                                             @foreach ($projects as $project)
                                                 
-                                                <div class="row my-3 align-items-center">
-                                                    <div class="col-md-2 text-capitalize">{{$project->title}}</div>
-                                                    <div class="col-md-1 text-capitalize">{{$project->sub_title}}</div>
-                                                    <div class="col-md-2 text-capitalize">{!!Str::limit($project->description,60)!!}</div>
+                                                <div class="row my-3 align-items-center bg-white rounded p-2 p-md-1">
                                                     <div class="col-md-2 text-capitalize">
+                                                        <div class="row align-items-center">
+                                                            <div class="col-4 col-md-0 text-capitalize font-weight-bold text-dark show-small" style="display: none">title</div>
+                                                            <div class="col-8 col-md-12 text-capitalize">{{$project->title}}</div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-1 text-capitalize">
+                                                        <div class="row align-items-center">
+                                                            <div class="col-4 col-md-0 text-capitalize font-weight-bold text-dark show-small" style="display: none">sub title</div>
+                                                            <div class="col-8 col-md-12 text-capitalize"> {{$project->sub_title}}</div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-2 text-capitalize titles" style="display: none">
+                                                        <div class="row align-items-center">
+                                                            <div class="col-4 col-md-0 text-capitalize font-weight-bold text-dark show-small" style="display: none">description</div>
+                                                            <div class="col-8 col-md-12 text-capitalize">{!!Str::limit($project->description,60)!!}</div>
+                                                        </div>
+                                                        
+                                                    </div>
+                                                    <div class="col-md-2 my-3 my-md-0 text-capitalize mx-auto text-center">
                                                         @php
                                                             $picture = json_decode($project->pictures)[0];
                                                         @endphp
@@ -102,18 +117,36 @@
                                                     <div class="col-md-1 text-capitalize">
                                                         
                                                         @if ($project->section && count($project->section))
-                                                            @foreach ($project->section as $section)
-                                                                <div>{{$section->section}}</div>
-                                                            @endforeach
+                                                            <div class="row align-items-center">
+                                                                <div class="col-4 col-md-0 text-capitalize font-weight-bold text-dark show-small" style="display: none">portfolios</div>
+                                                                <div class="col-8 col-md-12 text-capitalize">
+                                                                    @foreach ($project->section as $section)
+                                                                        <div class="d-inline-block d-md-block mb-1 btn-outline-primary btn-sm btn">{{$section->section}}</div>
+                                                                    @endforeach
+                                                                </div>
+                                                            </div>
+                                                            
                                                         @else 
-                                                            <span class="text-danger">NONE</span>
+                                                            <div class="row align-items-center">
+                                                                <div class="col-4 col-md-0 text-capitalize font-weight-bold text-dark show-small" style="display: none">portfolios</div>
+                                                                <div class="col-8 col-md-12 text-uppercase text-danger">
+                                                                    none
+                                                                </div>
+                                                            </div>
+                                                            
                                                         @endif
                                                     </div>
-                                                    <div class="col-md-1 text-center">
-                                                        <div class="custom-control custom-checkbox">
-                                                            <input type="checkbox" name="page_name" @if($project->main_page) checked @endif id="{{$project->title}}-{{$project->id}}" value="{{$project->id}}" class="custom-control-input portfolio-project-checked">
-                                                            <label for="{{$project->title}}-{{$project->id}}" class="custom-control-label m-3"></label>
+                                                    <div class="col-md-1 text-md-center">
+                                                        <div class="row align-items-center">
+                                                            <div class="col-4 col-md-0 text-capitalize font-weight-bold text-dark show-small" style="display: none">main</div>
+                                                            <div class="col-8 col-md-12 text-capitalize">
+                                                                <div class="custom-control custom-checkbox">
+                                                                    <input type="checkbox" name="page_name" @if($project->main_page) checked @endif id="{{$project->title}}-{{$project->id}}" value="{{$project->id}}" class="custom-control-input portfolio-project-checked">
+                                                                    <label for="{{$project->title}}-{{$project->id}}" class="custom-control-label m-3"></label>
+                                                                </div>
+                                                            </div>
                                                         </div>
+                                                        
                                                     </div>
                                                     <div class="col-md-3 text-capitalize">
                                                         <a href="{{route('admin.dashboard.portfolio.project.show',$project->id)}}" class="btn btn-info btn-sm text-capitalize">show</a>
@@ -146,6 +179,7 @@
 @section('special-script')
     <script>
         $(document).ready(function(){
+            // toggle project into main page
             $('.portfolio-project-checked').click(function(){
                 let that = $(this);
                 $.ajax({
@@ -171,6 +205,13 @@
                     }
                 })
             })
+            // show and hide some element depend on screen width
+            let window_width = window.innerWidth;
+            if(window_width >= 768){
+                $('.titles').show();
+            }else{
+                $('.show-small').show();
+            }
         })
     </script>
 @endsection

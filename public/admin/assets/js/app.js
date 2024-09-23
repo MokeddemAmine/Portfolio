@@ -14262,6 +14262,8 @@ $(document).ready(function() {
 
       $('.mobile-toggle').on('click', function() {
         $('body').toggleClass('sidebar-toggled');
+        $('.app-navbar').toggleClass('expand');
+
       });
 
 })(window, document, window.jQuery);
