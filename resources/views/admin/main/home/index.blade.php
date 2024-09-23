@@ -13,7 +13,7 @@
                             <!-- begin page title -->
                             <div class="d-block d-lg-flex flex-nowrap align-items-center">
                                 <div class="page-title mr-4 pr-4 border-right">
-                                    <h1>Main / <span class="text-secondary">Home</span></h1>
+                                    <h1 class="text-primary"><a href="{{route('admin.dashboard.main.index')}}">Main</a> / <span class="text-secondary">Home</span></h1>
                                 </div>
                                 
                             </div>
@@ -53,7 +53,7 @@
                                         <div class="text-info my-3">You dont set any information yet</div>
                                         
                                     @endif
-                                    <a href="{{route('admin.dashboard.main.home.edit')}}" class="btn btn-info btn-sm my-3 text-capitalize">edit info</a>
+                                    <a href="{{route('admin.dashboard.main.home.edit')}}" class="btn btn-primary btn-sm my-3 text-capitalize">edit info</a>
                                 </div>
                             </div>
                         </div>

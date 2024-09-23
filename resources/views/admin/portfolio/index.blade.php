@@ -13,7 +13,7 @@
                             <!-- begin page title -->
                             <div class="d-block d-lg-flex flex-nowrap align-items-center">
                                 <div class="page-title mr-4 pr-4 border-right">
-                                    <h1>Main / <span class="text-secondary">Portfolio</span></h1>
+                                    <h1><span class="text-primary">Portfolio</span></h1>
                                 </div>
                                 
                             </div>
@@ -52,7 +52,7 @@
                                         <div class="text-info my-3">You dont set any portfolio section yet</div>
                                         
                                     @endif
-                                    <a href="{{route('admin.dashboard.portfolio.create')}}" class="btn btn-info btn-sm my-3 text-capitalize">add porfolio section</a>
+                                    <a href="{{route('admin.dashboard.portfolio.create')}}" class="btn btn-primary btn-sm my-3 text-capitalize">add porfolio section</a>
                                 </div>
                             </div>
                         </div>
@@ -63,7 +63,7 @@
                             <!-- begin page title -->
                             <div class="d-block d-lg-flex flex-nowrap align-items-center">
                                 <div class="page-title mr-4 pr-4 border-right">
-                                    <h3>Main / <span class="text-secondary">Projects</span></h3>
+                                    <h3><span class="text-primary">Projects</span></h3>
                                 </div>
                                 
                             </div>
@@ -132,7 +132,7 @@
                                         <div class="text-info my-3">You dont set any projects yet</div>
                                         
                                     @endif
-                                    <a href="{{route('admin.dashboard.portfolio.project.create')}}" class="btn btn-info btn-sm my-3 text-capitalize">add project</a>
+                                    <a href="{{route('admin.dashboard.portfolio.project.create')}}" class="btn btn-primary btn-sm my-3 text-capitalize">add project</a>
                                 </div>
                             </div>
                         </div>

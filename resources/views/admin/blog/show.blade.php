@@ -13,7 +13,7 @@
                                 <!-- begin page title -->
                                 <div class="d-block d-sm-flex flex-nowrap align-items-center">
                                     <div class="page-title mb-2 mb-sm-0">
-                                        <h1><a href="{{route('admin.dashboard.blog.index')}}">Blog</a> / <span class="text-secondary">{{$blog->title}}</span></h1>
+                                        <h1 class="text-capitalize text-primary"><a href="{{route('admin.dashboard.blog.index')}}">posts</a> / <span class="text-secondary">{{$blog->title}}</span></h1>
                                     </div>
                                     <div class="ml-auto d-flex align-items-center">
                                         <nav>
@@ -21,7 +21,10 @@
                                                 <li class="breadcrumb-item">
                                                     <a href="{{route('admin.dashboard.index')}}"><i class="ti ti-home"></i></a>
                                                 </li>
-                                                <li class="breadcrumb-item active text-primary" aria-current="page">Blog</li>
+                                                <li class="breadcrumb-item">
+                                                    <a href="{{route('admin.dashboard.blog.index')}}">Posts</a>
+                                                </li>
+                                                <li class="breadcrumb-item active text-primary" aria-current="page">{{$blog->title}}</li>
                                             </ol>
                                         </nav>
                                     </div>

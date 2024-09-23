@@ -50,7 +50,6 @@ Route::prefix('/admin')->name('admin.')->group(function(){
                     Route::get('/','index')->name('index');
                     Route::get('/mail-inbox','mail_inbox')->name('mail_inbox');
                     Route::get('/account-settings','account_settings')->name('account_settings');
-                    Route::get('/pricing','pricing')->name('pricing');
                 });
 
                 Route::controller(AdminMessageController::class)->group(function(){
@@ -83,6 +82,9 @@ Route::prefix('/admin')->name('admin.')->group(function(){
             });
 
             Route::prefix('/main')->name('main.')->group(function(){
+                Route::get('/',function(){
+                    return view('admin.main.index');
+                })->name('index');
                 Route::prefix('/home')->name('home.')->group(function(){
                     Route::controller(AdminMainHomeController::class)->group(function(){
                         Route::get('/','index')->name('index');

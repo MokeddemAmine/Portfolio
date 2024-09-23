@@ -24,7 +24,7 @@
                             show: false
                         }
                     },
-                    colors: ['#8E54E9', '#2bcbba'],
+                    colors: ['#ff8c05', '#2bcbba'],
                     dataLabels: {
                         enabled: true,
                     },
@@ -120,7 +120,7 @@
                         type: 'gradient',
                         gradient: {
                             shade: 'dark',
-                            gradientToColors: [ '#8E54E9'],
+                            gradientToColors: [ '#ff8c05'],
                             shadeIntensity: 1,
                             type: 'horizontal',
                             opacityFrom: 1,
@@ -176,7 +176,7 @@
                         name: 'series2',
                         data: [11, 32, 45, 32, 34, 52, 41]
                     }],
-                    colors: ['#8E54E9', '#2bcbba'],
+                    colors: ['#ff8c05', '#2bcbba'],
                     xaxis: {
                         type: 'datetime',
                         categories: ["2018-09-19T00:00:00", "2018-09-19T01:30:00", "2018-09-19T02:30:00", "2018-09-19T03:30:00", "2018-09-19T04:30:00", "2018-09-19T05:30:00", "2018-09-19T06:30:00"],                
@@ -210,7 +210,7 @@
                       },
               
                     },
-                    colors: ['#8E54E9', '#2bcbba', '#eceef3'],
+                    colors: ['#ff8c05', '#2bcbba', '#eceef3'],
                     dataLabels: {
                         enabled: false
                     },
@@ -292,7 +292,7 @@
                             horizontal: true,
                         }
                     },
-                    colors: ['#8E54E9'],
+                    colors: ['#ff8c05'],
                     dataLabels: {
                         enabled: false
                     },
@@ -321,7 +321,7 @@
                         type: 'bar',
                         stacked: true
                     },
-                    colors: ['#8E54E9','#2bcbba'],
+                    colors: ['#ff8c05','#2bcbba'],
                     plotOptions: {
                         bar: {
                             horizontal: true,
@@ -414,7 +414,7 @@
                         colors: undefined
                       }
                     },
-                    colors: ['#8E54E9','#2bcbba','#f7b731','#45aaf2','#e3324c'],
+                    colors: ['#ff8c05','#2bcbba','#f7b731','#45aaf2','#e3324c'],
 
                     series: [21, 23, 19, 14, 6],
                     labels: ['Clothing', 'Food Products', 'Electronics', 'Kitchen Utility', 'Gardening'],
@@ -450,7 +450,7 @@
                         colors: undefined
                       }
                     },
-                    colors: ['#8E54E9','#2bcbba','#f7b731','#45aaf2','#e3324c'],
+                    colors: ['#ff8c05','#2bcbba','#f7b731','#45aaf2','#e3324c'],
 
                     series: [21, 23, 19, 14, 6],
                     labels: ['Clothing', 'Food Products', 'Electronics', 'Kitchen Utility', 'Gardening'],
@@ -1948,7 +1948,7 @@
                         name: 'Nifty 50',
                         data: dates
                     }],
-                    colors: ['#8E54E9'],
+                    colors: ['#ff8c05'],
                     fill: {
                         gradient: {
                         enabled: true,
@@ -2115,7 +2115,7 @@
                             curve: 'smooth',
                             dashArray: [0, 4]
                           },
-                          colors: ["#8E54E9", '#2bcbba'],
+                          colors: ["#ff8c05", '#2bcbba'],
                           series: [{
                               name: "Total revenue",
                               data: [45, 52, 38, 24, 33, 26, 21, 20]
@@ -2258,7 +2258,7 @@
                       yaxis: {
                         min: 0
                       },
-                      colors: ['#8E54E9'],
+                      colors: ['#ff8c05'],
                 }
 
                 var chart = new ApexCharts(
@@ -2415,7 +2415,7 @@
                           enabled: true
                         }
                       },
-                      colors:['#8E54E9'],
+                      colors:['#ff8c05'],
                       plotOptions: {
                         bar: {
                           columnWidth: '20%',
@@ -2628,7 +2628,7 @@
                         width: 140,
                         type: 'donut',
                       },
-                      colors: ['#8E54E9', '#f7b731', '#45aaf2'],
+                      colors: ['#ff8c05', '#f7b731', '#45aaf2'],
                       labels: ['Redirect Visists', 'New Visits', 'Direct Visits'],
                       series: [456, 256, 128],
                       legend: {
@@ -2689,7 +2689,7 @@
                           show: false,
                         },
                     },
-                    colors:['#8E54E9', '#eceef3'],
+                    colors:['#ff8c05', '#eceef3'],
                     plotOptions: {
                         bar: {
                             horizontal: false,
@@ -2852,7 +2852,7 @@
                       yaxis: {
                         min: 0
                       },
-                      colors: ['#8E54E9'],
+                      colors: ['#ff8c05'],
                 }
 
                 var chart = new ApexCharts(
@@ -3069,7 +3069,7 @@
                         height: 230,
                         type: 'pie',
                     },
-                    colors:['#8E54E9','#fbaf54','#4776E6','#e3324c','#444444'],
+                    colors:['#ff8c05','#fbaf54','#4776E6','#e3324c','#444444'],
                     labels: ['Direct', 'Referral', 'Organic Search','Social Network', 'Other Advertising'],
                     series: [44, 55, 13,53,35],
                     legend: {
@@ -3227,7 +3227,7 @@
                         },
                       },
                       markers: {
-                        strokeColor: '#8E54E9',
+                        strokeColor: '#ff8c05',
                         size: 3
                       },
                       series: [{
@@ -3236,7 +3236,7 @@
                       yaxis: {
                         min: 0
                       },
-                      colors: ['#8E54E9'],
+                      colors: ['#ff8c05'],
                 }
 
                 var chart = new ApexCharts(
@@ -3258,7 +3258,7 @@
                           show: false,
                         },
                     },
-                    colors:['#8E54E9'],
+                    colors:['#ff8c05'],
                     plotOptions: {
                         bar: {
                             horizontal: false,
@@ -3389,7 +3389,7 @@
                                     show: false
                                 }
                             },
-                            colors: ['#8E54E9', '#4776E6'],
+                            colors: ['#ff8c05', '#4776E6'],
                             dataLabels: {
                                 enabled: true,
                             },
@@ -3609,7 +3609,7 @@
                         size: 0,
                         style: 'full',
                     },
-                    colors: ['#8E54E9'],
+                    colors: ['#ff8c05'],
                     fill: {
                         gradient: {
                         enabled: true,
@@ -3693,7 +3693,7 @@
                         dataLabels: {
                             enabled: false
                         },
-                        colors: ['#8E54E9'],
+                        colors: ['#ff8c05'],
                         fill: {
                             gradient: {
                                 enabled: true,
@@ -3792,7 +3792,7 @@
                                 })
                             }
                         ],
-                         colors: ['#8E54E9', '#45aaf2'],
+                         colors: ['#ff8c05', '#45aaf2'],
                         fill: {
                             opacity: 0.8,
 
@@ -3941,7 +3941,7 @@
                             curve: 'smooth',
                             dashArray: [0, 4]
                           },
-                          colors: ['#8E54E9'],
+                          colors: ['#ff8c05'],
                           series: [{
                               name: "Session Duration",
                               data: [2, 1, 2, 1, 3, 8, 2, 3, 2, 1, 3, 2, 2, 3, 1,]
@@ -4211,7 +4211,7 @@
                               columnWidth: '80%'
                             }
                           },
-                          colors:['#8E54E9'],
+                          colors:['#ff8c05'],
                           series: [{
                             data: [25, 66, 41, 89, 63, 25, 44, 12, 36, 9, 54,44, 12, 36, 9, 54, 66, 41, 89, 63, 25,25, 44, 12, 36, 9, 54,44, 12, 36, 9]
                           }],
@@ -4393,7 +4393,7 @@
                         show: false
                       }
                     },
-                    colors: ['#8E54E9'],
+                    colors: ['#ff8c05'],
                     stroke: {
                       width: 2,
                       curve: 'smooth'
@@ -4444,7 +4444,7 @@
                           }
                         },
                       },
-                      colors: ['#8E54E9'],
+                      colors: ['#ff8c05'],
                       series: [{
                         data: data
                       }],
@@ -4674,11 +4674,11 @@
                                   shadeIntensity: 1,
                                   opacityFrom: 1,
                                   opacityTo:1,
-                                  gradientToColors: ['#8E54E9', '#45aaf2' , '#2bcbba'],
+                                  gradientToColors: ['#ff8c05', '#45aaf2' , '#2bcbba'],
                                   stops: [0, 90, 100]
                                 }
                           },
-                        colors:['#8E54E9','#45aaf2', '#2bcbba'],
+                        colors:['#ff8c05','#45aaf2', '#2bcbba'],
                         series: [45, 55, 80],
                         labels: ['Desktop', 'Tablet', 'Mobile'],
                         responsive: [{
@@ -4824,7 +4824,7 @@
                       stroke: {
                         curve: 'straight'
                       },
-                      colors:['#8E54E9', '#45aaf2'],
+                      colors:['#ff8c05', '#45aaf2'],
                       series: [
                         {
                           name: "Blog",
@@ -4949,7 +4949,7 @@
                                   enabled: true
                                 }
                               },
-                              colors:['#8E54E9'],
+                              colors:['#ff8c05'],
                               plotOptions: {
                                 bar: {
                                   columnWidth: '20%',
@@ -5249,7 +5249,7 @@
                                   shadeIntensity: 0,
                                   opacityFrom: 1,
                                   opacityTo: 0,
-                                  gradientToColors: ['#8E54E9'],
+                                  gradientToColors: ['#ff8c05'],
                                   stops: [0, 90, 100]
                                 }
                           },
@@ -5383,11 +5383,11 @@
                                   shadeIntensity: 1,
                                   opacityFrom: 1,
                                   opacityTo:0.5,
-                                  gradientToColors: ['#8E54E9', '#4776E6'],
+                                  gradientToColors: ['#ff8c05', '#4776E6'],
                                   stops: [0, 90, 100]
                                 }
                           },
-                        colors:['#8E54E9','#4776E6'],
+                        colors:['#ff8c05','#4776E6'],
                         series: [45, 55],
                         labels: ['Job Seekers', 'Job Providers'],
                         responsive: [{
@@ -5768,7 +5768,7 @@
                         show: true,
                         borderColor: '#ebedf2',
                         },
-                        colors:['#8E54E9'],
+                        colors:['#ff8c05'],
                         dataLabels: {
                             enabled: false
                         },
@@ -5828,7 +5828,7 @@
                             legend: {
                                 offsetY: -10,
                             },
-                            colors:['#fb0792', '#8E54E9'],
+                            colors:['#fb0792', '#ff8c05'],
                             fill: {
                             type: 'gradient',
                                 gradient: {
@@ -5916,7 +5916,7 @@
                   dataLabels: {
                     enabled: false,
                   },
-                  colors: ["#8E54E9", '#eceef3'],
+                  colors: ["#ff8c05", '#eceef3'],
                   series: [{
                     name: "Sessions",
                     data: [20, 16, 24, 28, 26, 22, 15, 5, 14, 16, 22, 29, 24, 19],
@@ -9411,7 +9411,7 @@
                                     ['data2', 50, 20, 10, 40, 15, 25]
                                 ],
                                 colors: {
-                                    data1: '#8E54E9',
+                                    data1: '#ff8c05',
                                     data2: '#4776E6'
                                 },
                             }
@@ -9427,7 +9427,7 @@
                                     ['data2', 130, 100, 140, 200, 150, 50]
                                 ],
                                 colors: {
-                                    data1: '#8E54E9',
+                                    data1: '#ff8c05',
                                     data2: '#4776E6'
                                 },
                                 types: {
@@ -9448,7 +9448,7 @@
                                     ['data3', 130, 150, 200, 300, 200, 100]
                                 ],
                                 colors: {
-                                    data1: '#8E54E9',
+                                    data1: '#ff8c05',
                                     data2: '#4776E6',
                                     data3: '#ffbc1d'
                                 },
@@ -9474,7 +9474,7 @@
                                 ],
                                 type: 'bar',
                                 colors: {
-                                    data1: '#8E54E9',
+                                    data1: '#ff8c05',
                                     data2: '#4776E6',
                                     data3: '#ffbc1d',
                                     data4: '#25d09a'
@@ -9501,7 +9501,7 @@
                                     ["virginica", 2.5, 1.9, 2.1, 1.8, 2.2, 2.1, 1.7, 1.8, 1.8, 2.5, 2.0, 1.9, 2.1, 2.0, 2.4, 2.3, 1.8, 2.2, 2.3, 1.5, 2.3, 2.0, 2.0, 1.8, 2.1, 1.8, 1.8, 1.8, 2.1, 1.6, 1.9, 2.0, 2.2, 1.5, 1.4, 2.3, 2.4, 1.8, 1.8, 2.1, 2.4, 2.3, 1.9, 2.3, 2.5, 2.3, 1.9, 2.0, 2.3, 1.8],
                                 ],
                                 colors: {
-                                    setosa: '#8E54E9',
+                                    setosa: '#ff8c05',
                                     versicolor: '#4776E6',
                                     virginica: '#ffbc1d'
                                 },
@@ -9520,7 +9520,7 @@
                                     ["mobile", 2.5, 1.9, 2.1, 1.8, 2.2, 2.1, 1.7, 1.8, 1.8, 2.5, 2.0, 1.9, 2.1, 2.0, 2.4, 2.3, 1.8, 2.2, 2.3, 1.5, 2.3, 2.0, 2.0, 1.8, 2.1, 1.8, 1.8, 1.8, 2.1, 1.6, 1.9, 2.0, 2.2, 1.5, 1.4, 2.3, 2.4, 1.8, 1.8, 2.1, 2.4, 2.3, 1.9, 2.3, 2.5, 2.3, 1.9, 2.0, 2.3, 1.8],
                                 ],
                                 colors: {
-                                    desktop: '#8E54E9',
+                                    desktop: '#ff8c05',
                                     tablet: '#4776E6',
                                     mobile: '#ffbc1d'
                                 },
@@ -11239,7 +11239,7 @@ var checkin = $('.range-from').datepicker({
                                         align: "center"
                                     }
                                 },
-                                colors: ["#4776E6", "#8E54E9", "#fbaf54"]
+                                colors: ["#4776E6", "#ff8c05", "#fbaf54"]
                             });
                         }
 
@@ -11303,7 +11303,7 @@ var checkin = $('.range-from').datepicker({
                             series: {
                                 shadowSize: 0 // Drawing is faster without shadows
                             },
-                            colors: [" #8E54E9"],
+                            colors: [" #ff8c05"],
                             yaxis: {
                                 min: 0,
                                 max: 100
@@ -11536,7 +11536,7 @@ var checkin = $('.range-from').datepicker({
                             if (data.length > 0) {
                                 $.plot("#flot-series-toggle", data, {
                                     grid: { borderWidth: 0, labelMargin: 10, axisMargin: 0, minBorderMargin: 0 },
-                                    colors: ["#f7b731", "#fd9644", "#32b432", "#8E54E9", "#4776E6", "#e3324c", "#fb0792"],
+                                    colors: ["#f7b731", "#fd9644", "#32b432", "#ff8c05", "#4776E6", "#e3324c", "#fb0792"],
                                     yaxis: {
                                         min: 0
                                     },
@@ -12523,7 +12523,7 @@ var checkin = $('.range-from').datepicker({
                                 { data: exchangerates, label: "USD/EUR exchange rate", yaxis: 2 }
                             ], {
                                 grid: { borderWidth: 0, labelMargin: 10, axisMargin: 0, minBorderMargin: 0 },
-                                colors: ["#8E54E9", "#32b432"],
+                                colors: ["#ff8c05", "#32b432"],
                                 xaxes: [{ mode: "time" }],
                                 yaxes: [{ min: 0 }, {
                                     // align if we are to the right
@@ -12732,9 +12732,9 @@ var checkin = $('.range-from').datepicker({
                             pins: pins,
                             pinMode: 'content',
                             showTooltip: true,
-                            hoverColor: '#8E54E9',
+                            hoverColor: '#ff8c05',
                             borderColor: '#fff',
-                            selectedColor: ['#8E54E9'],
+                            selectedColor: ['#ff8c05'],
                             color: '#eceef3',
                             selectedRegions: ['US', 'AU', 'IN', 'GR'],
                             onRegionClick: function(event){
@@ -12772,8 +12772,8 @@ var checkin = $('.range-from').datepicker({
                         jQuery(usa).vectorMap({
                             map: 'usa_en',
                             backgroundColor: '#fff',
-                            selectedColor: '#8E54E9',
-                            hoverColor: '#8E54E9',
+                            selectedColor: '#ff8c05',
+                            hoverColor: '#ff8c05',
                             borderColor: '#fff',
                             color: '#e8edf1'
                         });
@@ -12885,7 +12885,7 @@ var checkin = $('.range-from').datepicker({
                             xkey: 'y',
                             ykeys: ['a', 'b'],
                             labels: ['Series A', 'Series B'],
-                            lineColors: ['#4776E6', '#8E54E9'],
+                            lineColors: ['#4776E6', '#ff8c05'],
                             resize: true,
                             padding: 20,
                             grid: false,
@@ -12910,7 +12910,7 @@ var checkin = $('.range-from').datepicker({
                             xkey: 'y',
                             ykeys: ['a', 'b'],
                             labels: ['Series A', 'Series B'],
-                            lineColors: ['#4776E6', '#8E54E9'],
+                            lineColors: ['#4776E6', '#ff8c05'],
                             resize: true,
                             fillOpacity: 0.4,
                             padding: 20,
@@ -12936,7 +12936,7 @@ var checkin = $('.range-from').datepicker({
                             xkey: 'y',
                             ykeys: ['a', 'b'],
                             labels: ['Series A', 'Series B'],
-                            barColors: ['#4776E6', '#8E54E9'],
+                            barColors: ['#4776E6', '#ff8c05'],
                             resize: true,
                             fillOpacity: 0.4,
                             padding: 15,
@@ -12975,7 +12975,7 @@ var checkin = $('.range-from').datepicker({
                             xkey: 'y',
                             ykeys: ['a', 'b'],
                             labels: ['Series A', 'Series B'],
-                            barColors: ['#4776E6', '#8E54E9'],
+                            barColors: ['#4776E6', '#ff8c05'],
                             resize: true,
                             fillOpacity: 0.4,
                             padding: 15,
@@ -12995,7 +12995,7 @@ var checkin = $('.range-from').datepicker({
                                 { label: "Open campaign", value: 800 },
                                 { label: "Daily sales", value: 500 }
                             ],
-                            colors: ['#45aaf2', '#8E54E9', '#eceef3']
+                            colors: ['#45aaf2', '#ff8c05', '#eceef3']
                         });
                     }
                     
@@ -13500,7 +13500,7 @@ var checkin = $('.range-from').datepicker({
                             type: 'pie',
                             width: '200',
                             height: '165',
-                            sliceColors: ['#4776E6', '#8E54E9', '#ffbc1d', '#25d09a']
+                            sliceColors: ['#4776E6', '#ff8c05', '#ffbc1d', '#25d09a']
                         });
                     }
 

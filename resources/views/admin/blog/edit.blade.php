@@ -21,7 +21,7 @@
                                 <!-- begin page title -->
                                 <div class="d-block d-sm-flex flex-nowrap align-items-center">
                                     <div class="page-title mb-2 mb-sm-0">
-                                        <h1><a href="{{route('admin.dashboard.blog.index')}}">Blog</a> / <span class="text-secondary">{{$blog->title}} (edit) </span></h1>
+                                        <h1 class="text-primary text-capitalize"><a href="{{route('admin.dashboard.blog.index')}}">posts</a> / <span class="text-secondary">{{$blog->title}} (edit) </span></h1>
                                     </div>
                                     <div class="ml-auto d-flex align-items-center">
                                         <nav>
@@ -162,7 +162,7 @@
                                 <strong class="text-danger my-2">{{$errors->first('content')}}</strong>
                             @endif
                             <div class="my-3">
-                                <button type="submit" class="btn btn-primary btn-sm">Update Blog</button>
+                                <button type="submit" class="btn btn-primary btn-sm text-capitalize">update post</button>
                             </div>
                             
                         </form>

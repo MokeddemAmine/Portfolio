@@ -5,7 +5,7 @@
         <!-- begin navbar-header -->
         <div class="navbar-header d-flex align-items-center">
             <a href="javascript:void:(0)" class="mobile-toggle"><i class="ti ti-align-right"></i></a>
-            <a class="navbar-brand" href="{{route('admin.dashboard.index')}}">
+            <a class="navbar-brand text-primary" href="{{route('admin.dashboard.index')}}">
                 @if ($logo)
                     @if ($logo->name)
                         <img src="{{asset('storage/'.$logo->picture)}}" style="width:30px !important;" class="img-fluid logo-desktop" alt="logo" />

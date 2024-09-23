@@ -21,7 +21,7 @@
                                 <!-- begin page title -->
                                 <div class="d-block d-sm-flex flex-nowrap align-items-center">
                                     <div class="page-title mb-2 mb-sm-0">
-                                        <h1><a href="{{route('admin.dashboard.blog.index')}}">Blog</a> / <span class="text-secondary">Create </span></h1>
+                                        <h1 class="text-primary"><a href="{{route('admin.dashboard.blog.index')}}">Posts</a> / <span class="text-secondary">Create </span></h1>
                                     </div>
                                     <div class="ml-auto d-flex align-items-center">
                                         <nav>
@@ -30,7 +30,7 @@
                                                     <a href="{{route('admin.dashboard.blog.index')}}"><i class="ti ti-home"></i></a>
                                                 </li>
 
-                                                <li class="breadcrumb-item active text-primary" aria-current="page">Blog (create)</li>
+                                                <li class="breadcrumb-item active text-primary" aria-current="page">Post (create)</li>
                                             </ol>
                                         </nav>
                                     </div>
@@ -143,7 +143,7 @@
                                 <strong class="text-danger my-2">{{$errors->first('content')}}</strong>
                             @endif
                             <div class="my-3">
-                                <button type="submit" class="btn btn-primary btn-sm">Add Blog</button>
+                                <button type="submit" class="btn btn-primary btn-sm">Add Post</button>
                             </div>
                             
                         </form>

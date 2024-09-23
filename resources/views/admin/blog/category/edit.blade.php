@@ -13,7 +13,7 @@
                                 <!-- begin page title -->
                                 <div class="d-block d-sm-flex flex-nowrap align-items-center">
                                     <div class="page-title mb-2 mb-sm-0">
-                                        <h1><a href="{{route('admin.dashboard.blog.index')}}">Blog</a> / <a href="{{route('admin.dashboard.categories.index')}}">Categories</a> /  <span class="text-secondary"><span class="text-uppercase">{{$category->name}}</span> (Edit)</span> </h1>
+                                        <h1 class="text-capitalize text-primary"><a href="{{route('admin.dashboard.blog.index')}}">Posts</a> / <a href="{{route('admin.dashboard.categories.index')}}">Categories</a> /  <span class="text-secondary"><span class="text-uppercase">{{$category->name}}</span> (Edit)</span> </h1>
                                     </div>
                                     <div class="ml-auto d-flex align-items-center">
                                         <nav>

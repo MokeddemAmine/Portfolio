@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Blog;
 use App\Models\Home;
 use App\Models\Message;
 use Illuminate\Http\Request;
@@ -22,12 +23,10 @@ class AdminHomeController extends Controller
         return view('admin.mail-inbox',compact('messages'));
     }
     public function account_settings(){
+        $blogs_count = Blog::all()->count();
         $admin = Auth::guard('admin')->user();
         $messages = Message::all()->count();
         $brand = Home::where('section','website')->first();
-        return view('admin.account-settings',compact('admin','messages','brand'));
-    }
-    public function pricing(){
-        return view('admin.pricing');
+        return view('admin.account-settings',compact('admin','messages','brand','blogs_count'));
     }
 }

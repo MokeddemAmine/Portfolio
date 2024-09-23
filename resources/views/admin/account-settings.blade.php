@@ -13,7 +13,7 @@
                                 <!-- begin page title -->
                                 <div class="d-block d-sm-flex flex-nowrap align-items-center">
                                     <div class="page-title mb-2 mb-sm-0">
-                                        <h1>Account Settings</h1>
+                                        <h1 class="text-primary text-capitalize">account settings</h1>
                                     </div>
                                     <div class="ml-auto d-flex align-items-center">
                                         <nav>
@@ -74,7 +74,11 @@
                                                         <ul class="nav justify-content-center text-center">
                                                             <li class="nav-item border-right px-3">
                                                                 <div>
-                                                                    <h4 class="mb-0">90</h4>
+                                                                    <h4 class="mb-0">
+                                                                        @if ($blogs_count)
+                                                                            {{$blogs_count}}
+                                                                        @endif
+                                                                    </h4>
                                                                     <p>Post</p>
                                                                 </div>
                                                             </li>

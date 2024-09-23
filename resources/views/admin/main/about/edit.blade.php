@@ -13,7 +13,7 @@
                             <!-- begin page title -->
                             <div class="d-block d-lg-flex flex-nowrap align-items-center">
                                 <div class="page-title mr-4 pr-4 border-right">
-                                    <h1>Main / <a href="{{route('admin.dashboard.main.about.index')}}">About</a> / <span class="text-secondary">edit</span> </h1>
+                                    <h1 class="text-primary"><a href="{{route('admin.dashboard.main.index')}}">Main</a> / <a href="{{route('admin.dashboard.main.about.index')}}">About</a> / <span class="text-secondary">edit</span> </h1>
                                 </div>
                                 
                             </div>

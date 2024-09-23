@@ -13,7 +13,7 @@
                             <!-- begin page title -->
                             <div class="d-block d-lg-flex flex-nowrap align-items-center">
                                 <div class="page-title mr-4 pr-4 border-right">
-                                    <h1>Main / <a href="{{route('admin.dashboard.main.resume.index')}}">Resume</a> / <span class="text-secondary">{{$resume->name}}</span></h1>
+                                    <h1 class="text-primary">M<a href="{{route('admin.dashboard.main.index')}}">Main</a> / <a href="{{route('admin.dashboard.main.resume.index')}}">Resume</a> / <span class="text-secondary">{{$resume->name}}</span></h1>
                                 </div>
                                 
                             </div>
@@ -53,7 +53,7 @@
                                         <div class="text-info my-3">You dont set any information yet</div>
                                         
                                     @endif
-                                    <a href="{{route('admin.dashboard.main.resume.content.create',$resume->id)}}" class="btn btn-info btn-sm my-3 text-capitalize">add content</a>
+                                    <a href="{{route('admin.dashboard.main.resume.content.create',$resume->id)}}" class="btn btn-primary btn-sm my-3 text-capitalize">add content</a>
                                 </div>
                             </div>
                         </div>
