@@ -5,10 +5,19 @@ $(document).ready(function(){
     })
 
     $('.btn-delete').click(function(){
-        let confirmation = confirm('you sure want to delete this');
-        if(confirmation){
-            $(this).siblings('.form-delete').submit();
-        }
+        swal.fire({
+            title:'Are You Sure want to delete this',
+            text:'this delete will be parmanent',
+            icon:'danger',
+            showDenyButton: true,
+            confirmButtonText: "Delete",
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+        }).then((result) => {
+            if(result.isConfirmed){
+                $(this).siblings('.form-delete').submit();
+            }
+        });
     })
     // delete picture when edit project of portfolio
     $('.picture .close').click(function(){
