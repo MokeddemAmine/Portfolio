@@ -8,6 +8,7 @@ use App\Http\Controllers\admin\auth\AdminLoginController;
 use App\Http\Controllers\admin\auth\AdminPasswordController;
 use App\Http\Controllers\admin\auth\AdminRegisterController;
 use App\Http\Controllers\admin\auth\AdminVerificationEmailController;
+use App\Http\Controllers\admin\KeysAdminController;
 use App\Http\Controllers\admin\main\AdminMainAboutController;
 use App\Http\Controllers\admin\main\AdminMainContactController;
 use App\Http\Controllers\admin\main\AdminMainHomeController;
@@ -182,6 +183,17 @@ Route::prefix('/admin')->name('admin.')->group(function(){
                 });
                 
             });
+
+        Route::prefix('/keys')->name('keys.')->group(function(){
+            Route::controller(KeysAdminController::class)->group(function(){
+                Route::get('/','index')->name('index');
+                Route::get('/create','create')->name('create');
+                Route::post('/','store')->name('store');
+                Route::get('/{key}/edit','edit')->name('edit');
+                Route::put('/{key}','update')->name('update');
+                Route::delete('/{key}','destroy')->name('destroy');
+            });
+        });
             
 
         });

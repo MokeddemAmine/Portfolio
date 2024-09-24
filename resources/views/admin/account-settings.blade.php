@@ -160,6 +160,7 @@
                                                                 
                                                             </div>
                                                             <button type="submit" class="btn btn-primary mt-5">Update Information</button>
+                                                            <a href="{{route('admin.dashboard.keys.index')}}" class="d-block my-3 text-capitalize"> <i class="fa fa-lock"></i> manage admin key</a>
                                                         </form>
                                                     </div>
                                                 </div>
